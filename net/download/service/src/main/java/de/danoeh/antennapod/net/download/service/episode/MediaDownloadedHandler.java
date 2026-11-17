@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import de.danoeh.antennapod.adskip.AdDetection;
 import de.danoeh.antennapod.model.MediaMetadataRetrieverCompat;
 import de.danoeh.antennapod.model.feed.Feed;
 import de.danoeh.antennapod.net.sync.serviceinterface.SynchronizationQueue;
@@ -49,6 +50,7 @@ public class MediaDownloadedHandler implements Runnable {
             Log.e(TAG, "Could not find downloaded media object in database");
             return;
         }
+        long declaredDurationMs = media.getDuration();
         // media.setDownloaded modifies played state
         boolean broadcastUnreadStateUpdate = media.getItem() != null && media.getItem().isNew();
         media.setDownloaded(true, System.currentTimeMillis());
@@ -115,6 +117,7 @@ public class MediaDownloadedHandler implements Runnable {
                         .currentTimestamp()
                         .build());
         }
+        AdDetection.onEpisodeDownloaded(context, media, declaredDurationMs);
     }
 
     @NonNull

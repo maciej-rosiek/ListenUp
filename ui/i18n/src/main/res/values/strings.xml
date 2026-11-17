@@ -1058,6 +1058,43 @@
     <string name="echo_share_heading">My favorite podcasts</string>
     <string name="echo_share">My year %d in podcasts. #AntennaPodEcho</string>
 
+    <string name="ad_detection_label">Ad detection</string>
+    <string name="ad_detection_summary_off">Off. Detect dynamically inserted ads after each download</string>
+    <string name="ad_detection_summary_compare">Compare downloads</string>
+    <string name="ad_detection_summary_known">Known ads</string>
+    <string name="ad_detection_summary_both">Known ads, then compare downloads when something is left unexplained</string>
+    <string name="ad_detection_compare_downloads">Compare downloads</string>
+    <string name="ad_detection_compare_downloads_sum">Download the episode again 2-5 times on Wi-Fi and mark the parts that differ between the downloads as ads</string>
+    <string name="ad_detection_known_ads">Known ads</string>
+    <string name="ad_detection_known_ads_sum">Look for ads found in earlier episodes first, and compare downloads only when that does not explain the whole file</string>
+    <string name="ad_segments_label">Ad segments</string>
+    <string name="ad_segments_empty">No ads marked in this episode</string>
+    <string name="ad_detect_again">Detect ads again</string>
+    <string name="ad_detection_queued">Ad detection queued</string>
+    <string name="ad_detection_state_queued">Waiting to detect ads</string>
+    <string name="ad_detection_state_waiting_for_wifi">Waiting for Wi-Fi to download comparison copies</string>
+    <string name="ad_detection_state_running">Detecting ads…</string>
+    <string name="ad_detection_state_failed">Ad detection failed: %1$s</string>
+    <string name="ad_detection_state_done">Checked against %1$d extra downloads</string>
+    <string name="ad_detection_state_done_known">Checked against known ads</string>
+    <string name="ad_detection_unexplained">%1$d s of the file are longer than the episode length in the feed and may still be ads</string>
+    <string name="ad_detection_not_mp3">only MP3 files can be checked</string>
+    <string name="ad_detection_not_downloaded">the episode is not downloaded</string>
+    <string name="ad_skipped">Skipped ad (%1$d s)</string>
+    <string name="ad_skip_undo">Undo</string>
+    <string name="ad_playing_skipped_part">Playing the skipped part</string>
+    <string name="ad_never_skip">Never skip</string>
+    <string name="ad_segment_kept">Not skipped</string>
+    <string name="ad_segment_keep">Do not skip</string>
+    <string name="ad_segment_skip">Skip</string>
+    <string name="ad_segment_play">Play from here</string>
+    <string name="ad_segment_edit">Edit segment</string>
+    <string name="ad_segment_start">Start</string>
+    <string name="ad_segment_end">End</string>
+    <string name="ad_segment_source_diff">found by comparing downloads</string>
+    <string name="ad_segment_source_known">known ad</string>
+    <string name="ad_segment_source_user">edited by you</string>
+
     <!-- WearOS specific strings (unused in main app module, so we need to suppress the warnings) -->
     <string name="wearos_connected_to" tools:ignore="UnusedResources">Connected to %s</string>
     <string name="wearos_version" tools:ignore="UnusedResources">Version %s</string>

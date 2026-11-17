@@ -20,6 +20,7 @@ include ':app'
 include ':app-wearos'
 
 include ':adskip:detector'
+include ':adskip:service'
 
 include ':event'
 include ':model'
