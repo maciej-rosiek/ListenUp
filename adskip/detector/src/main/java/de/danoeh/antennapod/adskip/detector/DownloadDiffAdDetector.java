@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public final class DownloadDiffAdDetector implements AdDetector {
     public enum CompareMode { NEVER, WHEN_UNEXPLAINED, ALWAYS }
@@ -39,25 +43,45 @@ public final class DownloadDiffAdDetector implements AdDetector {
 
         List<FrameHashes> copies = new ArrayList<>();
         copies.add(played);
-        DownloadComparison comparison = null;
-        List<AdSpan> spans = knownSpans;
-        while (copies.size() - 1 < maxExtraCopies) {
-            copies.add(hash(episode.extraCopies.openCopy(copies.size() - 1)));
-            if (copies.size() - 1 < minExtraCopies) {
-                continue;
-            }
+        copies.addAll(hashCopiesInParallel(episode.extraCopies, 0, minExtraCopies));
+        DownloadComparison comparison = DownloadComparison.of(copies);
+        List<AdSpan> spans = withDiffSpans(knownSpans, played, comparison);
+        long remainingMs = unexplainedMs(played, spans, episode.declaredDurationMs);
+        if (remainingMs != DetectionResult.UNKNOWN && remainingMs > EXPLAINED_TOLERANCE_MS
+                && maxExtraCopies > minExtraCopies) {
+            copies.addAll(hashCopiesInParallel(episode.extraCopies, minExtraCopies, maxExtraCopies));
             comparison = DownloadComparison.of(copies);
             spans = withDiffSpans(knownSpans, played, comparison);
-            long remainingMs = unexplainedMs(played, spans, episode.declaredDurationMs);
-            if (remainingMs == DetectionResult.UNKNOWN || remainingMs <= EXPLAINED_TOLERANCE_MS) {
-                break;
-            }
         }
-        if (comparison != null) {
-            library.add(AdClipLearner.withoutKnown(
-                    AdClipLearner.clips(comparison.adSequencesOfAllCopies()), knownAds));
-        }
+        library.add(AdClipLearner.withoutKnown(AdClipLearner.clips(comparison.adSequencesOfAllCopies()), knownAds));
         return new DetectionResult(spans, copies.size() - 1, unexplainedMs(played, spans, episode.declaredDurationMs));
+    }
+
+    private static List<FrameHashes> hashCopiesInParallel(EpisodeAudio.CopyOpener opener, int fromIndex,
+                                                          int toIndex) throws IOException {
+        ExecutorService executor = Executors.newFixedThreadPool(toIndex - fromIndex);
+        try {
+            List<Future<FrameHashes>> futures = new ArrayList<>();
+            for (int index = fromIndex; index < toIndex; index++) {
+                int copyIndex = index;
+                futures.add(executor.submit(() -> hash(opener.openCopy(copyIndex))));
+            }
+            List<FrameHashes> copies = new ArrayList<>();
+            for (Future<FrameHashes> future : futures) {
+                copies.add(future.get());
+            }
+            return copies;
+        } catch (ExecutionException e) {
+            if (e.getCause() instanceof IOException ioException) {
+                throw ioException;
+            }
+            throw new IOException(e.getCause());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IOException(e);
+        } finally {
+            executor.shutdownNow();
+        }
     }
 
     private static List<AdSpan> withDiffSpans(List<AdSpan> knownSpans, FrameHashes played,

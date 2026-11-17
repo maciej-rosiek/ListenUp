@@ -16,8 +16,6 @@ import java.io.InputStream;
 import java.security.SecureRandom;
 
 public class EpisodeCopyFetcher implements EpisodeAudio.CopyOpener {
-    private static final long PAUSE_BETWEEN_COPIES_MS = 2000;
-
     private final Context context;
     private final String url;
     private final String runId = Integer.toHexString(new SecureRandom().nextInt(0x1000000));
@@ -32,9 +30,6 @@ public class EpisodeCopyFetcher implements EpisodeAudio.CopyOpener {
         if (!isOnUnmeteredNetwork(context)) {
             throw new WifiRequiredException();
         }
-        if (copyIndex > 0) {
-            pause();
-        }
         String userAgent = UserAgentInterceptor.USER_AGENT + " (copy " + runId + "-" + (copyIndex + 1) + ")";
         OkHttpClient client = AntennapodHttpClient.getHttpClient().newBuilder()
                 .addNetworkInterceptor(chain -> chain.proceed(chain.request().newBuilder()
@@ -48,15 +43,6 @@ public class EpisodeCopyFetcher implements EpisodeAudio.CopyOpener {
             throw new IOException("HTTP " + response.code() + " for extra copy " + (copyIndex + 1));
         }
         return body.byteStream();
-    }
-
-    private static void pause() throws IOException {
-        try {
-            Thread.sleep(PAUSE_BETWEEN_COPIES_MS);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new IOException(e);
-        }
     }
 
     public static boolean isOnUnmeteredNetwork(Context context) {

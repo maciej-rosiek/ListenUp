@@ -2,7 +2,10 @@ package de.danoeh.antennapod.adskip.detector;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static de.danoeh.antennapod.adskip.detector.DownloadDiffAdDetector.CompareMode.ALWAYS;
 import static de.danoeh.antennapod.adskip.detector.DownloadDiffAdDetector.CompareMode.WHEN_UNEXPLAINED;
@@ -68,9 +71,36 @@ public class DownloadDiffAdDetectorTest {
                 episode(played, SyntheticMp3.frameMs(4000), sameAd, sameAd, otherAd, otherAd, otherAd));
 
         // then
-        assertEquals(3, result.copiesCompared);
+        assertEquals(5, result.copiesCompared);
         assertEquals(1, result.spans.size());
         assertSpan(result.spans.get(0), 2000, 2800);
+    }
+
+    @Test
+    public void downloadsTheCopiesOfABatchAtTheSameTime() throws Exception {
+        // given
+        SyntheticMp3 played = new SyntheticMp3().frames("ad", 0, 300).frames("show", 0, 3000);
+        SyntheticMp3 copy = new SyntheticMp3().frames("show", 0, 3000);
+        CountDownLatch allCopiesRequested = new CountDownLatch(2);
+        EpisodeAudio episode = new EpisodeAudio(played::stream, index -> {
+            allCopiesRequested.countDown();
+            try {
+                if (!allCopiesRequested.await(5, TimeUnit.SECONDS)) {
+                    throw new AssertionError("Copy " + index + " was not downloaded together with the other");
+                }
+            } catch (InterruptedException e) {
+                throw new IOException(e);
+            }
+            return copy.stream();
+        }, 0);
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, ALWAYS, 2, 2);
+
+        // when
+        DetectionResult result = detector.detect(episode);
+
+        // then
+        assertEquals(2, result.copiesCompared);
+        assertSpan(result.spans.get(0), 0, 300);
     }
 
     @Test
