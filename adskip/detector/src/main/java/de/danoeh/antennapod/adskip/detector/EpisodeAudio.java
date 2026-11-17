@@ -15,10 +15,17 @@ public final class EpisodeAudio {
     public final StreamOpener playedFile;
     public final CopyOpener extraCopies;
     public final long declaredDurationMs;
+    public final String hostAdBreaksHeader;
 
     public EpisodeAudio(StreamOpener playedFile, CopyOpener extraCopies, long declaredDurationMs) {
+        this(playedFile, extraCopies, declaredDurationMs, null);
+    }
+
+    public EpisodeAudio(StreamOpener playedFile, CopyOpener extraCopies, long declaredDurationMs,
+                        String hostAdBreaksHeader) {
         this.playedFile = playedFile;
         this.extraCopies = extraCopies;
         this.declaredDurationMs = declaredDurationMs;
+        this.hostAdBreaksHeader = hostAdBreaksHeader;
     }
 }

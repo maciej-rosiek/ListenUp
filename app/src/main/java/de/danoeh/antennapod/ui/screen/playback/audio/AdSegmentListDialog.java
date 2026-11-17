@@ -153,6 +153,7 @@ public class AdSegmentListDialog extends DialogFragment {
     private String sourceText(AdSegment segment) {
         return switch (segment.source) {
             case AdSegment.SOURCE_KNOWN_AD -> getString(R.string.ad_segment_source_known);
+            case AdSegment.SOURCE_HOST_MARKED -> getString(R.string.ad_segment_source_host);
             case AdSegment.SOURCE_USER -> getString(R.string.ad_segment_source_user);
             default -> getString(R.string.ad_segment_source_diff);
         };

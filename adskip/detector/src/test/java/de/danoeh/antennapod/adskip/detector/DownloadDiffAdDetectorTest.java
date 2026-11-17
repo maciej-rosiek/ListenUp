@@ -104,6 +104,46 @@ public class DownloadDiffAdDetectorTest {
     }
 
     @Test
+    public void findsAdClipsTaggedInTheFileWithoutExtraDownloads() throws Exception {
+        // given
+        SyntheticMp3 played = new SyntheticMp3()
+                .frames("show", 0, 1000).clipTagFrame(299).frames("ad", 0, 299).frames("show", 1000, 3000);
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(
+                new InMemoryKnownAdLibrary(), false, WHEN_UNEXPLAINED, 2, 5);
+
+        // when
+        DetectionResult result = detector.detect(episode(played, SyntheticMp3.frameMs(3000), null, null));
+
+        // then
+        assertEquals(0, result.copiesCompared);
+        assertEquals(AdSpan.Source.CLIP_TAG, result.spans.get(0).source);
+        assertSpan(result.spans.get(0), 1000, 1300);
+    }
+
+    @Test
+    public void findsAdBreaksListedByTheHostWithoutExtraDownloads() throws Exception {
+        // given
+        SyntheticMp3 played = new SyntheticMp3()
+                .frames("show", 0, 1000).frames("ad", 0, 300).frames("show", 1000, 3000);
+        long firstByte = 1000L * SyntheticMp3.FRAME_BYTES;
+        long lastByte = 1300L * SyntheticMp3.FRAME_BYTES - 1;
+        String header = "#" + lastByte + "#mid#1#" + firstByte + "##true#true,#" + (firstByte - 1) + "#mid#2#"
+                + firstByte + "##true#true@episode#128000#0";
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(
+                new InMemoryKnownAdLibrary(), false, WHEN_UNEXPLAINED, 2, 5);
+
+        // when
+        DetectionResult result = detector.detect(new EpisodeAudio(played::stream, index -> {
+            throw new AssertionError("No extra copy must be downloaded");
+        }, SyntheticMp3.frameMs(3000), header));
+
+        // then
+        assertEquals(1, result.spans.size());
+        assertEquals(AdSpan.Source.HOST_AD_BREAKS, result.spans.get(0).source);
+        assertSpan(result.spans.get(0), 1000, 1300);
+    }
+
+    @Test
     public void findsNothingWhenAllCopiesAreIdentical() throws Exception {
         // given
         SyntheticMp3 played = new SyntheticMp3().frames("show", 0, 3000);

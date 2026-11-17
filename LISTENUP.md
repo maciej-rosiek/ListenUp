@@ -5,6 +5,11 @@ skips dynamically inserted ads on the phone, with no server.
 
 ## How ad detection works
 
+Megaphone marks the ads it inserts: each ad clip starts with an encoder tag frame that holds the clip's length,
+and the audio response lists every ad slot in an `x-megaphone-payload-2` header. ListenUp reads both from the
+one download it already makes. When they and the known ads do not explain the whole file, it falls back to
+comparing downloads:
+
 Hosts like Megaphone stitch ads into the MP3 at download time without re-encoding the show, so the show's
 MP3 frames are byte-identical in every download and only the ads differ. After an episode is downloaded,
 ListenUp hashes every MP3 frame, downloads the episode again 2-5 times on Wi-Fi (hashing the stream, not
@@ -19,9 +24,8 @@ Ad detection is off by default and switched on per podcast in the podcast settin
 
 - [AntennaPod](https://github.com/AntennaPod/AntennaPod), GPL-3.0. ListenUp keeps its code, history and
   license and merges AntennaPod `develop`.
-- [TrimPlayer](https://github.com/yonatanholdings/TrimPlayer), GPL-3.0: the skip cue sound
-  (`playback/service/src/main/res/raw/skip_cue.wav`), the segment overlay of the mini player
-  (`SegmentOverlayView`) and the segment wash of the seek bar.
+- [TrimPlayer](https://github.com/yonatanholdings/TrimPlayer), GPL-3.0: the segment overlay of the mini
+  player (`SegmentOverlayView`) and the segment wash of the seek bar.
 
 ListenUp is licensed under the GNU General Public License v3.0, see [LICENSE](LICENSE).
 

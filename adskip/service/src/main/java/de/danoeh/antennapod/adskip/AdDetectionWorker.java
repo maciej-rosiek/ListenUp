@@ -58,7 +58,7 @@ public class AdDetectionWorker extends Worker {
         try {
             DetectionResult result = detector.detect(new EpisodeAudio(() -> new FileInputStream(file),
                     new EpisodeCopyFetcher(getApplicationContext(), media.getDownloadUrl()),
-                    analysis.declaredDurationMs));
+                    analysis.declaredDurationMs, analysis.hostAdBreaksHeader));
             store.replaceDetectedSegments(mediaId, result.spans);
             store.saveAnalysis(analysis.done(result.copiesCompared, result.unexplainedMs));
             Log.d(TAG, "Found " + result.spans.size() + " ads in " + media.getEpisodeTitle());

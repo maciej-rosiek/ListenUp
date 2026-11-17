@@ -19,6 +19,12 @@
         android:icon="@drawable/ic_check"/>
 
     <item
+        android:id="@+id/mark_all_played_item"
+        android:menuCategory="container"
+        android:title="@string/mark_all_played_label"
+        android:icon="@drawable/ic_mark_played"/>
+
+    <item
         android:id="@+id/remove_archive_feed"
         android:menuCategory="container"
         android:title="@string/remove_archive_feed_label"

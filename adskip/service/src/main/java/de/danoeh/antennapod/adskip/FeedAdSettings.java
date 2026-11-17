@@ -21,6 +21,6 @@ public final class FeedAdSettings {
         if (!compareDownloads) {
             return CompareMode.NEVER;
         }
-        return knownAds ? CompareMode.WHEN_UNEXPLAINED : CompareMode.ALWAYS;
+        return CompareMode.WHEN_UNEXPLAINED;
     }
 }

@@ -17,7 +17,7 @@ import java.util.List;
 
 public final class AdSkipStore extends SQLiteOpenHelper implements KnownAdLibrary {
     private static final String DATABASE_NAME = "adskip.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static final String TABLE_SEGMENTS = "segments";
     private static final String TABLE_ANALYSIS = "analysis";
@@ -46,7 +46,8 @@ public final class AdSkipStore extends SQLiteOpenHelper implements KnownAdLibrar
         db.execSQL("CREATE INDEX segments_media ON " + TABLE_SEGMENTS + " (media_id)");
         db.execSQL("CREATE TABLE " + TABLE_ANALYSIS + " (media_id INTEGER PRIMARY KEY, state TEXT NOT NULL,"
                 + " declared_duration_ms INTEGER NOT NULL DEFAULT 0, copies_compared INTEGER NOT NULL DEFAULT 0,"
-                + " unexplained_ms INTEGER NOT NULL DEFAULT -1, message TEXT, updated_at INTEGER NOT NULL)");
+                + " unexplained_ms INTEGER NOT NULL DEFAULT -1, message TEXT, updated_at INTEGER NOT NULL,"
+                + " host_ad_breaks TEXT)");
         db.execSQL("CREATE TABLE " + TABLE_KNOWN_ADS + " (id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + " hashes BLOB NOT NULL, frames INTEGER NOT NULL, first_seen INTEGER NOT NULL,"
                 + " last_seen INTEGER NOT NULL, times_seen INTEGER NOT NULL DEFAULT 1)");
@@ -56,6 +57,9 @@ public final class AdSkipStore extends SQLiteOpenHelper implements KnownAdLibrar
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (oldVersion < 2) {
+            db.execSQL("ALTER TABLE " + TABLE_ANALYSIS + " ADD COLUMN host_ad_breaks TEXT");
+        }
     }
 
     public List<AdSegment> getSegments(long mediaId) {
@@ -92,8 +96,7 @@ public final class AdSkipStore extends SQLiteOpenHelper implements KnownAdLibrar
                 values.put("start_ms", span.startMs);
                 values.put("end_ms", span.endMs);
                 values.put("type", AdSegment.TYPE_AD);
-                values.put("source", span.source == AdSpan.Source.KNOWN_AD
-                        ? AdSegment.SOURCE_KNOWN_AD : AdSegment.SOURCE_DOWNLOAD_DIFF);
+                values.put("source", sourceOf(span));
                 db.insert(TABLE_SEGMENTS, null, values);
             }
             db.setTransactionSuccessful();
@@ -127,13 +130,14 @@ public final class AdSkipStore extends SQLiteOpenHelper implements KnownAdLibrar
 
     public AdAnalysis getAnalysis(long mediaId) {
         try (Cursor cursor = getReadableDatabase().query(TABLE_ANALYSIS,
-                new String[]{"state", "declared_duration_ms", "copies_compared", "unexplained_ms", "message"},
+                new String[]{"state", "declared_duration_ms", "copies_compared", "unexplained_ms", "message",
+                    "host_ad_breaks"},
                 "media_id = ?", new String[]{String.valueOf(mediaId)}, null, null, null)) {
             if (!cursor.moveToFirst()) {
                 return AdAnalysis.none(mediaId);
             }
             return new AdAnalysis(mediaId, AdAnalysis.State.valueOf(cursor.getString(0)), cursor.getLong(1),
-                    cursor.getInt(2), cursor.getLong(3), cursor.getString(4));
+                    cursor.getInt(2), cursor.getLong(3), cursor.getString(4), cursor.getString(5));
         }
     }
 
@@ -145,6 +149,7 @@ public final class AdSkipStore extends SQLiteOpenHelper implements KnownAdLibrar
         values.put("copies_compared", analysis.copiesCompared);
         values.put("unexplained_ms", analysis.unexplainedMs);
         values.put("message", analysis.message);
+        values.put("host_ad_breaks", analysis.hostAdBreaksHeader);
         values.put("updated_at", System.currentTimeMillis());
         getWritableDatabase().insertWithOnConflict(TABLE_ANALYSIS, null, values, SQLiteDatabase.CONFLICT_REPLACE);
         notifyChanged(analysis.mediaId);
@@ -207,6 +212,14 @@ public final class AdSkipStore extends SQLiteOpenHelper implements KnownAdLibrar
         getWritableDatabase().execSQL("UPDATE " + TABLE_KNOWN_ADS
                 + " SET last_seen = ?, times_seen = times_seen + 1 WHERE id = ?",
                 new Object[]{System.currentTimeMillis(), knownAdId});
+    }
+
+    private static String sourceOf(AdSpan span) {
+        return switch (span.source) {
+            case KNOWN_AD -> AdSegment.SOURCE_KNOWN_AD;
+            case CLIP_TAG, HOST_AD_BREAKS -> AdSegment.SOURCE_HOST_MARKED;
+            case DOWNLOAD_DIFF -> AdSegment.SOURCE_DOWNLOAD_DIFF;
+        };
     }
 
     private static byte[] toBytes(long[] hashes) {

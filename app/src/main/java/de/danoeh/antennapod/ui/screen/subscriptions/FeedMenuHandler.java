@@ -34,6 +34,7 @@ public abstract class FeedMenuHandler {
             }
         }
         setItemVisibility(menu, R.id.remove_all_inbox_item, allSubscribed);
+        setItemVisibility(menu, R.id.mark_all_played_item, allSubscribed);
         setItemVisibility(menu, R.id.remove_archive_feed, !allArchived && allSubscribed);
         setItemVisibility(menu, R.id.remove_restore_feed, allArchived);
         boolean singleNonLocalFeedSelected = selectedItems.size() == 1 && !selectedItems.get(0).isLocalFeed();

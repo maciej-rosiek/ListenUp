@@ -9,26 +9,30 @@ public final class AdAnalysis {
     public final int copiesCompared;
     public final long unexplainedMs;
     public final String message;
+    public final String hostAdBreaksHeader;
 
     public AdAnalysis(long mediaId, State state, long declaredDurationMs, int copiesCompared, long unexplainedMs,
-                      String message) {
+                      String message, String hostAdBreaksHeader) {
         this.mediaId = mediaId;
         this.state = state;
         this.declaredDurationMs = declaredDurationMs;
         this.copiesCompared = copiesCompared;
         this.unexplainedMs = unexplainedMs;
         this.message = message;
+        this.hostAdBreaksHeader = hostAdBreaksHeader;
     }
 
     public static AdAnalysis none(long mediaId) {
-        return new AdAnalysis(mediaId, State.NONE, 0, 0, -1, null);
+        return new AdAnalysis(mediaId, State.NONE, 0, 0, -1, null, null);
     }
 
     public AdAnalysis withState(State newState, String newMessage) {
-        return new AdAnalysis(mediaId, newState, declaredDurationMs, copiesCompared, unexplainedMs, newMessage);
+        return new AdAnalysis(mediaId, newState, declaredDurationMs, copiesCompared, unexplainedMs, newMessage,
+                hostAdBreaksHeader);
     }
 
     public AdAnalysis done(int newCopiesCompared, long newUnexplainedMs) {
-        return new AdAnalysis(mediaId, State.DONE, declaredDurationMs, newCopiesCompared, newUnexplainedMs, null);
+        return new AdAnalysis(mediaId, State.DONE, declaredDurationMs, newCopiesCompared, newUnexplainedMs, null,
+                hostAdBreaksHeader);
     }
 }

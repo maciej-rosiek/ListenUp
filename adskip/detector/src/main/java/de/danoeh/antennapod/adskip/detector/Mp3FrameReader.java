@@ -5,7 +5,9 @@ import java.io.InputStream;
 import java.security.DigestException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public final class Mp3FrameReader {
     private static final int[] MPEG1_KBPS = {0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320};
@@ -15,17 +17,21 @@ public final class Mp3FrameReader {
     private static final int ID3_HEADER_BYTES = 10;
     private static final int BUFFER_BYTES = 64 * 1024;
     private static final int DIGEST_BYTES = 16;
+    private static final int CLIP_TAG_ENCODER_OFFSET = 120;
 
     private final InputStream in;
     private final byte[] buffer = new byte[BUFFER_BYTES];
     private int position = 0;
     private int limit = 0;
+    private long bufferStartOffset = 0;
     private boolean endOfStream = false;
 
     private final MessageDigest digest;
     private final byte[] digestOutput = new byte[DIGEST_BYTES];
     private long[] hashes = new long[1 << 16];
     private long[] startUs = new long[1 << 16];
+    private long[] byteOffsets = new long[1 << 16];
+    private final List<FrameSpan> taggedClips = new ArrayList<>();
     private int frameCount = 0;
     private double elapsedUs = 0;
 
@@ -66,10 +72,18 @@ public final class Mp3FrameReader {
                 continue;
             }
             addFrame(header);
+            int clipFrames = header.clipTagFrameCount(buffer, position);
+            if (clipFrames > 0) {
+                taggedClips.add(new FrameSpan(frameCount - 1, frameCount + clipFrames));
+            }
             position += header.frameBytes;
         }
+        List<FrameSpan> clipsWithinFile = new ArrayList<>();
+        for (FrameSpan clip : taggedClips) {
+            clipsWithinFile.add(new FrameSpan(clip.start, Math.min(clip.end, frameCount)));
+        }
         return new FrameHashes(Arrays.copyOf(hashes, frameCount), Arrays.copyOf(startUs, frameCount),
-                Math.round(elapsedUs));
+                Arrays.copyOf(byteOffsets, frameCount), Math.round(elapsedUs), clipsWithinFile);
     }
 
     private boolean isConfirmedByNextHeader(FrameHeader header) throws IOException {
@@ -85,6 +99,7 @@ public final class Mp3FrameReader {
         if (frameCount == hashes.length) {
             hashes = Arrays.copyOf(hashes, frameCount * 2);
             startUs = Arrays.copyOf(startUs, frameCount * 2);
+            byteOffsets = Arrays.copyOf(byteOffsets, frameCount * 2);
         }
         digest.update(buffer, position, header.frameBytes);
         try {
@@ -98,6 +113,7 @@ public final class Mp3FrameReader {
         }
         hashes[frameCount] = hash;
         startUs[frameCount] = Math.round(elapsedUs);
+        byteOffsets[frameCount] = bufferStartOffset + position;
         frameCount++;
         elapsedUs += header.samples * 1_000_000.0 / header.sampleRate;
     }
@@ -127,6 +143,7 @@ public final class Mp3FrameReader {
                 endOfStream = true;
                 break;
             }
+            bufferStartOffset += read;
             remaining -= read;
         }
     }
@@ -137,6 +154,7 @@ public final class Mp3FrameReader {
             return available;
         }
         System.arraycopy(buffer, position, buffer, 0, available);
+        bufferStartOffset += position;
         limit = available;
         position = 0;
         while (limit < needed) {
@@ -189,9 +207,35 @@ public final class Mp3FrameReader {
             return new FrameHeader(frameBytes, mpeg1 ? 1152 : 576, sampleRate, mpeg1, mono);
         }
 
+        int clipTagFrameCount(byte[] data, int offset) {
+            int tagOffset = offset + HEADER_BYTES + sideInfoBytes();
+            if (tagOffset + CLIP_TAG_ENCODER_OFFSET + 4 > offset + frameBytes) {
+                return -1;
+            }
+            int flags = readInt(data, tagOffset + 4);
+            int frames = readInt(data, tagOffset + 8);
+            int bytes = readInt(data, tagOffset + 12);
+            int encoderOffset = tagOffset + CLIP_TAG_ENCODER_OFFSET;
+            boolean knownEncoder = hasTag(data, encoderOffset, "Lavc") || hasTag(data, encoderOffset, "Lavf")
+                    || hasTag(data, encoderOffset, "LAME");
+            if ((flags & 0x03) != 0x03 || !knownEncoder || frames <= 0) {
+                return -1;
+            }
+            long expectedBytes = (long) (frames + 1) * frameBytes;
+            return Math.abs(bytes - expectedBytes) < frames + 1 + frameBytes ? frames : -1;
+        }
+
+        private int sideInfoBytes() {
+            return mpeg1 ? (mono ? 17 : 32) : (mono ? 9 : 17);
+        }
+
+        private static int readInt(byte[] data, int offset) {
+            return ((data[offset] & 0xFF) << 24) | ((data[offset + 1] & 0xFF) << 16)
+                    | ((data[offset + 2] & 0xFF) << 8) | (data[offset + 3] & 0xFF);
+        }
+
         boolean isVbrInfoFrame(byte[] data, int offset) {
-            int sideInfoBytes = mpeg1 ? (mono ? 17 : 32) : (mono ? 9 : 17);
-            int tagOffset = offset + HEADER_BYTES + sideInfoBytes;
+            int tagOffset = offset + HEADER_BYTES + sideInfoBytes();
             return hasTag(data, tagOffset, "Xing") || hasTag(data, tagOffset, "Info")
                     || hasTag(data, offset + HEADER_BYTES + 32, "VBRI");
         }

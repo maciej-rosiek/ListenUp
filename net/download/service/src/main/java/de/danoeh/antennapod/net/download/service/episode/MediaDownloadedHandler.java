@@ -117,7 +117,8 @@ public class MediaDownloadedHandler implements Runnable {
                         .currentTimestamp()
                         .build());
         }
-        AdDetection.onEpisodeDownloaded(context, media, declaredDurationMs);
+        AdDetection.onEpisodeDownloaded(context, media, declaredDurationMs,
+                request.getArguments().getString(AdDetection.ARG_HOST_AD_BREAKS));
     }
 
     @NonNull

@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
+import de.danoeh.antennapod.adskip.AdDetection;
+import de.danoeh.antennapod.adskip.detector.HostAdBreaks;
 import de.danoeh.antennapod.net.common.NetworkUtils;
 import de.danoeh.antennapod.model.download.DownloadResult;
 import de.danoeh.antennapod.model.download.DownloadRequest;
@@ -139,6 +141,7 @@ public class HttpDownloader extends Downloader {
 
                 out = new RandomAccessFile(destination, "rw");
                 out.seek(request.getSoFar());
+                request.getArguments().remove(AdDetection.ARG_HOST_AD_BREAKS);
             } else {
                 boolean success = destination.delete();
                 success |= destination.createNewFile();
@@ -146,6 +149,8 @@ public class HttpDownloader extends Downloader {
                     throw new IOException("Unable to recreate partially downloaded file");
                 }
                 out = new RandomAccessFile(destination, "rw");
+                request.getArguments().putString(AdDetection.ARG_HOST_AD_BREAKS,
+                        response.header(HostAdBreaks.MEGAPHONE_HEADER));
             }
 
             byte[] buffer = new byte[BUFFER_SIZE];

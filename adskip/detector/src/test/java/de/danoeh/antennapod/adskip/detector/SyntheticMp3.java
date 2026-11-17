@@ -2,6 +2,8 @@ package de.danoeh.antennapod.adskip.detector;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 final class SyntheticMp3 {
@@ -28,6 +30,19 @@ final class SyntheticMp3 {
             frame[3] = (byte) 0x64;
             bytes.writeBytes(frame);
         }
+        return this;
+    }
+
+    SyntheticMp3 clipTagFrame(int followingFrames) {
+        byte[] frame = new byte[FRAME_BYTES];
+        frame[0] = (byte) 0xFF;
+        frame[1] = (byte) 0xFB;
+        frame[2] = (byte) 0x90;
+        frame[3] = (byte) 0x64;
+        ByteBuffer tag = ByteBuffer.wrap(frame, 36, FRAME_BYTES - 36);
+        tag.putInt(0x55555555).putInt(0x0F).putInt(followingFrames).putInt((followingFrames + 1) * FRAME_BYTES);
+        System.arraycopy("Lavc".getBytes(StandardCharsets.US_ASCII), 0, frame, 36 + 120, 4);
+        bytes.writeBytes(frame);
         return this;
     }
 

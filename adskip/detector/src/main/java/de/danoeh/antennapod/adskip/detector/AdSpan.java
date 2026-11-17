@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Locale;
 
 public final class AdSpan {
-    public enum Source { DOWNLOAD_DIFF, KNOWN_AD }
+    public enum Source { DOWNLOAD_DIFF, KNOWN_AD, CLIP_TAG, HOST_AD_BREAKS }
 
     public final long startMs;
     public final long endMs;
@@ -29,7 +29,7 @@ public final class AdSpan {
         for (AdSpan span : sorted) {
             AdSpan last = merged.isEmpty() ? null : merged.get(merged.size() - 1);
             if (last != null && span.startMs - last.endMs <= maxGapMs) {
-                Source source = last.source == span.source ? last.source : Source.DOWNLOAD_DIFF;
+                Source source = last.source;
                 merged.set(merged.size() - 1, new AdSpan(last.startMs, Math.max(last.endMs, span.endMs), source));
             } else {
                 merged.add(span);

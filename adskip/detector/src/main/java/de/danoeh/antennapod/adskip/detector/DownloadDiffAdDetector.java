@@ -34,24 +34,30 @@ public final class DownloadDiffAdDetector implements AdDetector {
     public DetectionResult detect(EpisodeAudio episode) throws IOException {
         FrameHashes played = hash(episode.playedFile.open());
         List<KnownAd> knownAds = library.all();
-        List<AdSpan> knownSpans = useKnownAds ? findKnownAds(played, knownAds) : List.of();
-        long unexplainedMs = unexplainedMs(played, knownSpans, episode.declaredDurationMs);
+        List<AdSpan> markedSpans = new ArrayList<>(played.toAdSpans(played.taggedClips(), AdSpan.Source.CLIP_TAG));
+        markedSpans.addAll(played.toAdSpans(HostAdBreaks.framesOf(episode.hostAdBreaksHeader, played),
+                AdSpan.Source.HOST_AD_BREAKS));
+        if (useKnownAds) {
+            markedSpans.addAll(findKnownAds(played, knownAds));
+        }
+        List<AdSpan> sureSpans = AdSpan.merge(markedSpans, MERGE_GAP_MS);
+        long unexplainedMs = unexplainedMs(played, sureSpans, episode.declaredDurationMs);
         boolean explained = unexplainedMs != DetectionResult.UNKNOWN && unexplainedMs <= EXPLAINED_TOLERANCE_MS;
         if (compareMode == CompareMode.NEVER || (compareMode == CompareMode.WHEN_UNEXPLAINED && explained)) {
-            return new DetectionResult(knownSpans, 0, unexplainedMs);
+            return new DetectionResult(sureSpans, 0, unexplainedMs);
         }
 
         List<FrameHashes> copies = new ArrayList<>();
         copies.add(played);
         copies.addAll(hashCopiesInParallel(episode.extraCopies, 0, minExtraCopies));
         DownloadComparison comparison = DownloadComparison.of(copies);
-        List<AdSpan> spans = withDiffSpans(knownSpans, played, comparison);
+        List<AdSpan> spans = withDiffSpans(sureSpans, played, comparison);
         long remainingMs = unexplainedMs(played, spans, episode.declaredDurationMs);
         if (remainingMs != DetectionResult.UNKNOWN && remainingMs > EXPLAINED_TOLERANCE_MS
                 && maxExtraCopies > minExtraCopies) {
             copies.addAll(hashCopiesInParallel(episode.extraCopies, minExtraCopies, maxExtraCopies));
             comparison = DownloadComparison.of(copies);
-            spans = withDiffSpans(knownSpans, played, comparison);
+            spans = withDiffSpans(sureSpans, played, comparison);
         }
         library.add(AdClipLearner.withoutKnown(AdClipLearner.clips(comparison.adSequencesOfAllCopies()), knownAds));
         return new DetectionResult(spans, copies.size() - 1, unexplainedMs(played, spans, episode.declaredDurationMs));
@@ -84,9 +90,9 @@ public final class DownloadDiffAdDetector implements AdDetector {
         }
     }
 
-    private static List<AdSpan> withDiffSpans(List<AdSpan> knownSpans, FrameHashes played,
+    private static List<AdSpan> withDiffSpans(List<AdSpan> sureSpans, FrameHashes played,
                                               DownloadComparison comparison) {
-        List<AdSpan> spans = new ArrayList<>(knownSpans);
+        List<AdSpan> spans = new ArrayList<>(sureSpans);
         for (FrameSpan span : comparison.adSpansOf(0)) {
             spans.add(played.toAdSpan(span, AdSpan.Source.DOWNLOAD_DIFF));
         }

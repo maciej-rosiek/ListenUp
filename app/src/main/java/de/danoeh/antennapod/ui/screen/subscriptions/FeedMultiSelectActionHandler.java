@@ -14,12 +14,16 @@ import java.util.Locale;
 
 import de.danoeh.antennapod.R;
 import de.danoeh.antennapod.event.MessageEvent;
+import de.danoeh.antennapod.storage.database.DBReader;
 import de.danoeh.antennapod.storage.database.DBWriter;
 import de.danoeh.antennapod.databinding.PlaybackSpeedFeedSettingDialogBinding;
 import de.danoeh.antennapod.ui.common.ConfirmationDialog;
 import de.danoeh.antennapod.ui.screen.feed.RemoveFeedDialog;
 import de.danoeh.antennapod.ui.screen.feed.preferences.TagSettingsDialog;
 import de.danoeh.antennapod.model.feed.Feed;
+import de.danoeh.antennapod.model.feed.FeedItem;
+import de.danoeh.antennapod.model.feed.FeedItemFilter;
+import de.danoeh.antennapod.model.feed.SortOrder;
 import de.danoeh.antennapod.model.feed.FeedPreferences;
 import de.danoeh.antennapod.ui.preferences.screen.PreferenceListDialog;
 import de.danoeh.antennapod.ui.preferences.screen.PreferenceSwitchDialog;
@@ -60,6 +64,8 @@ public class FeedMultiSelectActionHandler {
             editFeedPrefTags();
         } else if (id == R.id.remove_all_inbox_item) {
             removeAllFromInbox();
+        } else if (id == R.id.mark_all_played_item) {
+            markAllPlayed();
         } else if (id == R.id.share_feed) {
             if (!selectedItems.get(0).isLocalFeed()) {
                 ShareUtils.shareFeedLink(activity, selectedItems.get(0));
@@ -181,6 +187,26 @@ public class FeedMultiSelectActionHandler {
                 Observable.fromAction(() -> {
                     for (Feed selectedFeed : selectedItems) {
                         DBWriter.removeFeedNewFlag(selectedFeed.getId());
+                    }
+                })
+                        .subscribeOn(Schedulers.computation())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(result -> { }, error -> Log.e(TAG, Log.getStackTraceString(error)));
+            }
+        }.createNewDialog().show();
+    }
+
+    private void markAllPlayed() {
+        new ConfirmationDialog(activity, R.string.mark_all_played_label, R.string.mark_all_played_confirmation_msg) {
+            @Override
+            public void onConfirmButtonPressed(DialogInterface clickedDialog) {
+                clickedDialog.dismiss();
+                Observable.fromAction(() -> {
+                    for (Feed selectedFeed : selectedItems) {
+                        List<FeedItem> unplayed = DBReader.getFeedItemList(selectedFeed,
+                                new FeedItemFilter(FeedItemFilter.UNPLAYED), SortOrder.DATE_NEW_OLD,
+                                0, Integer.MAX_VALUE);
+                        DBWriter.markItemsPlayed(FeedItem.PLAYED, true, unplayed);
                     }
                 })
                         .subscribeOn(Schedulers.computation())

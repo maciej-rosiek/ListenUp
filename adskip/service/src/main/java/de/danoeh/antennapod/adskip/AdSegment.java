@@ -4,6 +4,7 @@ public final class AdSegment {
     public static final String TYPE_AD = "ad";
     public static final String SOURCE_DOWNLOAD_DIFF = "download_diff";
     public static final String SOURCE_KNOWN_AD = "known_ad";
+    public static final String SOURCE_HOST_MARKED = "host_marked";
     public static final String SOURCE_USER = "user";
 
     public final long id;

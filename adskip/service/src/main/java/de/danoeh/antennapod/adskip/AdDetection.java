@@ -10,19 +10,22 @@ import androidx.work.WorkManager;
 import de.danoeh.antennapod.model.feed.FeedMedia;
 
 public final class AdDetection {
+    public static final String ARG_HOST_AD_BREAKS = "listenup_host_ad_breaks";
     private static final String WORK_PREFIX = "ad_detection_";
 
     private AdDetection() {
     }
 
-    public static void onEpisodeDownloaded(Context context, FeedMedia media, long declaredDurationMs) {
+    public static void onEpisodeDownloaded(Context context, FeedMedia media, long declaredDurationMs,
+                                           String hostAdBreaksHeader) {
         AdSkipStore store = AdSkipStore.getInstance(context);
         store.clearEpisode(media.getId());
         long feedId = media.getItem() != null ? media.getItem().getFeedId() : 0;
         if (!store.getFeedSettings(feedId).isEnabled()) {
             return;
         }
-        store.saveAnalysis(new AdAnalysis(media.getId(), AdAnalysis.State.QUEUED, declaredDurationMs, 0, -1, null));
+        store.saveAnalysis(new AdAnalysis(media.getId(), AdAnalysis.State.QUEUED, declaredDurationMs, 0, -1, null,
+                hostAdBreaksHeader));
         enqueue(context, media.getId(), false, Constraints.NONE);
     }
 
