@@ -14,7 +14,7 @@ where they disagree.
   AntennaPod. Name ListenUp-only string keys `ad_*` or `listenup_*`.
 - Work on `listenup`, commit in small steps, push to `origin`. AntennaPod's PR and issue conventions in
   `AGENTS.md` apply only to PRs aimed at AntennaPod itself.
-- Credits and license notes live in `LISTENUP.md`.
+- `README.md` is ListenUp's own (features, credits, license); on a merge conflict keep ours.
 
 ## Architecture
 
