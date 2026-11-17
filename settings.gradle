@@ -19,6 +19,8 @@ dependencyResolutionManagement {
 include ':app'
 include ':app-wearos'
 
+include ':adskip:detector'
+
 include ':event'
 include ':model'
 include ':system'
