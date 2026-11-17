@@ -48,6 +48,7 @@ import de.danoeh.antennapod.playback.base.MediaItemAdapter;
 import de.danoeh.antennapod.playback.base.PlayerStatus;
 import de.danoeh.antennapod.playback.base.RewindAfterPauseUtils;
 import de.danoeh.antennapod.playback.cast.CastPlayerWrapper;
+import de.danoeh.antennapod.playback.service.internal.AdSkipController;
 import de.danoeh.antennapod.playback.service.internal.ExoPlayerUtils;
 import de.danoeh.antennapod.playback.service.internal.MediaLibrarySessionCallback;
 import de.danoeh.antennapod.playback.service.internal.PlayableUtils;
@@ -103,6 +104,7 @@ public class Media3PlaybackService extends MediaLibraryService {
     @Nullable
     private LoudnessEnhancer loudnessEnhancer = null;
     private float volumeAdaptionFactor = 1.0f;
+    private AdSkipController adSkipController;
 
     @UnstableApi
     @Override
@@ -250,6 +252,9 @@ public class Media3PlaybackService extends MediaLibraryService {
 
             @Override
             public void seekTo(long positionMs) {
+                if (adSkipController != null) {
+                    adSkipController.onSeek(getCurrentPosition(), positionMs);
+                }
                 super.seekTo(positionMs);
                 EventBus.getDefault().post(
                         new PlaybackPositionEvent((int) positionMs, (int) player.getDuration()));
@@ -257,6 +262,7 @@ public class Media3PlaybackService extends MediaLibraryService {
             }
         };
         player.addListener(playerListener);
+        adSkipController = new AdSkipController(this, player);
         mediaSession = new MediaLibraryService.MediaLibrarySession.Builder(this, player, sessionCallback)
                 .setSessionActivity(new MainActivityStarter(this).withOpenPlayer().getPendingIntent())
                 .build();
@@ -405,6 +411,7 @@ public class Media3PlaybackService extends MediaLibraryService {
             if (PlaybackServiceInterface.isPlaying) {
                 lastPositionSaveTime = System.currentTimeMillis();
                 setupPositionObserver();
+                adSkipController.check();
             } else {
                 cancelPositionObserver();
                 saveCurrentPosition();
@@ -479,6 +486,7 @@ public class Media3PlaybackService extends MediaLibraryService {
     public void onDestroy() {
         PlaybackServiceInterface.isPlaying = false;
         cancelPositionObserver();
+        adSkipController.release();
         if (sleepTimer != null) {
             sleepTimer.stop();
             sleepTimer = null;
@@ -545,6 +553,7 @@ public class Media3PlaybackService extends MediaLibraryService {
                                 }
                             }
                             updateChapterArtwork();
+                            adSkipController.check();
                         }, error -> Log.e(TAG, "Position observer error", error));
     }
 
@@ -645,6 +654,7 @@ public class Media3PlaybackService extends MediaLibraryService {
     @OptIn(markerClass = UnstableApi.class)
     private void switchToPlayable(FeedMedia media) {
         currentPlayable = media;
+        adSkipController.onMediaChanged(media);
         playbackStartPosition = Math.max(currentPlayable.getPosition(), 0);
         playedDurationCountedUntil = playbackStartPosition;
 
