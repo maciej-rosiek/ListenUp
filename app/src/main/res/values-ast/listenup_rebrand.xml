@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="antennapod_version">Versión d\'ListenUp</string>
+    <string name="contributors_summary">Tol mundu pue ayudar a ameyorar ListenUp con códigu, traducciones o echando un gabitu a los usuarios nel nuesu foru</string>
+    <string name="licenses_summary">ListenUp usa otros programes maraviyosos</string>
+    <string name="database_export_summary">Tresfier les soscripciones, los episodios sentíos y la cola al ListenUp d\'otru preséu</string>
+    <string name="database_import_summary">Importa la base de datos del ListenUp d\'otru preséu</string>
+    <string name="import_ok">Primi «D\'acuerdu» pa reaniciar ListenUp</string>
+    <string name="import_no_downgrade">Esta base de datos esportóse con una versión nueva d\'ListenUp. La instalación actual entá nun sabe cómo remanar esti ficheru.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp en «%1$s»</string>
+    <string name="gpodnetauth_finish_descr">¡Norabona! La to cuenta de gpodder.net ta enllaciada col preséu. Dende agora, ListenUp va sincronizar automáticamente les soscripciones del preséu con esta cuenta.</string>
+    <string name="local_feed_description">Esti podcast virtual creóse por amestar una carpeta a ListenUp.</string>
+</resources>

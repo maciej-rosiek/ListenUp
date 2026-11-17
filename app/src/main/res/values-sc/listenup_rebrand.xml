@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Ti donamus su benebènnidu a ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Su podcast sugeridu non tenet unu ligòngiu RSS, ma ListenUp at agatadu unu podcast chi podet corrispòndere</string>
+    <string name="confirm_mobile_download_dialog_message">S\'iscarrigamentu cun datos mòbiles est disativadu in sa cunfiguratzione. ListenUp podet iscarrigare s\'episòdiu luego in automàticu cando su Wi-Fi siat a disponimentu.</string>
+    <string name="unknown_media_key">ListenUp - Crae de elementu multimediale disconnota: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Tene contu chi pro is cartellas in locale custu at a bogare episòdios dae ListenUp e at a cantzellare is archìvios multimediales chi currispondant dae su dispositivu de archiviatzione. No ant a pòdere èssere torrados a iscarrigare pro mèdiu de ListenUp. Boles ativare sa cantzelladura automàtica?</string>
+    <string name="feed_refresh_sum">Ispetzìfica s\'intervallu de chirca automàtica de episòdios dae parte de ListenUp</string>
+    <string name="pref_default_page_sum">Pàgina chi s\'at a abèrrere a s\'aviu de ListenUp</string>
+    <string name="antennapod_version">Versione de ListenUp</string>
+    <string name="contributors_summary">Chie si siat podet agiudare a megiorare ListenUp, iscriende còdighe, traduende o agiudende àtere in su forum</string>
+    <string name="licenses_summary">ListenUp impreat puru àteros programmas bellos meda</string>
+    <string name="database_export_summary">Trasferimentu de sutiscritziones, de is episòdios ascurtados e de sa lista de ListenUp a un\'àteru dispositivu</string>
+    <string name="database_import_summary">Importa una base de datos de ListenUp dae un\'àteru dispositivu</string>
+    <string name="automatic_database_export_summary">Crea una còpia de seguresa de sa base de datos de ListenUp onni 3 dies. Cunserva isceti is ùrtimas 5 còpias prus reghentes.</string>
+    <string name="import_ok">Preme AB pro torrare a aviare ListenUp</string>
+    <string name="import_no_downgrade">Custa base de datos est istada esportada cun una versione prus reghente de ListenUp. S\'installatzione tua atuale non iscit comente gestire custu archìviu.</string>
+    <string name="gpodnet_description">Gpodder.net est unu servìtziu de còdighe abertu de sincronizatzione de podcasts chi podes installare in unu serbidore pròpiu. Gpodder.net est indipendente de su progetu ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync est un\'aplicatzione de Nextcloud de còdighe abertu chi podes installare in unu serbidore pròpiu in manera simpre. Gpodder Sync est indipendente de su progetu ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Dona atzessu impreende su navigadore web chi tenes abertu e torra a ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp in %1$s</string>
+    <string name="gpodnetauth_finish_descr">Augùrios. As connètidu su dispositivu tuo cun su contu de gpodder.net. ListenUp at a sincronizare in automàticu totu is sutiscritziones de su dispositivu tuo cun su contu de gpodder.net tuo.</string>
+    <string name="choose_data_directory_message">Sèbera sa base de sa cartella de datos tua. ListenUp at a creare is sutacartellas netzessàrias.</string>
+    <string name="rating_volunteers_label">ListenUp est isvilupadu dae un\'iscuadra de voluntàrios in su tempus lìberu. Ammustra·ddis chi aprètzias su traballu issoro cun una valutatzione positiva.</string>
+    <string name="rating_rate">Lassa una valutatzione de ListenUp</string>
+    <string name="local_feed_description">Custu podcast virtuale est istadu creadu agiunghende una cartella a ListenUp.</string>
+    <string name="echo_share">Su %d miu in podcast. #ListenUpEcho</string>
+    <string name="delete_local_feed_confirmation_dialog_message">A cantzellare un\'episòdiu ddu bogat dae ListenUp e cantzellat s\'archìviu multimediale dae s\'ispàtziu de archiviatzione de su dispositivu. Non podet èssere torradu a iscarrigare pro mèdiu de ListenUp.</string>
+    <string name="report_bug_message">Nos dispraghet chi calicuna cosa non siat funtzionende comente si depet. Ti torramus gràtzias de s\'agiudu tuo pro megiorare ListenUp. Controlla si sa faddina est istada giai sinnalada in su fòrum nostru o in GitHub. Si nono, faghe·nos ischire e amus a controllare.</string>
+    <string name="visit_social_interact_confirm_dialog_title">Ses essende dae ListenUp</string>
+</resources>

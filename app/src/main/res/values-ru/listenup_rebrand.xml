@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Привет, это ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">У предложенного подкаста отсутствует RSS-ссылка, ListenUp нашел подкаст, который возможно ему соответствует</string>
+    <string name="confirm_mobile_download_dialog_message">Загрузка через мобильное соединение отключена в настройках. ListenUp может загрузить выпуск позже, когда появится соединение через Wi-Fi.</string>
+    <string name="unknown_media_key">ListenUp - неизвестный ключ носителя: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Внимание, для локальных папок это приведёт к удалению выпусков из ListenUp и удалению соответствующих медиафайлов из хранилища на устройстве. ListenUp не сможет загрузить их снова. Включить автоматическое удаление?</string>
+    <string name="feed_refresh_sum">Укажите интервал, с которым ListenUp будет автоматически искать новые выпуски</string>
+    <string name="pref_default_page_sum">Эта страница будет показана при запуске ListenUp</string>
+    <string name="antennapod_version">Версия ListenUp</string>
+    <string name="contributors_summary">Любой может сделать ListenUp лучше — своим кодом, переводом или помогая пользователям на форуме</string>
+    <string name="licenses_summary">В ListenUp используется другое отличное ПО</string>
+    <string name="database_export_summary">Передать подписки, список прослушанных и очередь в ListenUp на другом устройстве</string>
+    <string name="database_import_summary">Импортировать базу данных ListenUp с другого устройства</string>
+    <string name="automatic_database_export_summary">Создавать резервную копию базы данных ListenUp каждые 3 дня. Хранить только 5 последних резервных копий.</string>
+    <string name="import_ok">Нажмите OK, чтобы перезапустить ListenUp</string>
+    <string name="import_no_downgrade">Выбранная база данных экспортирована из более поздней версии ListenUp. Установленная версия не сможет воспользоваться этой базой.</string>
+    <string name="gpodnet_description">Gpodder.net — сервис синхронизации подкастов с открытым исходным кодом, который можно развернуть на собственном сервере. Gpodder.net не связан с проектом ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync — приложение с открытым исходным кодом для Nextcloud, которое вы можете установить на свой сервер. Это приложение не связано с проектом ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Предоставить доступ, открыв веб-браузер, и вернуться в ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp на %1$s</string>
+    <string name="gpodnetauth_finish_descr">Поздравляем! Ваша учётная запись gpodder.net связана с устройством. ListenUp будет автоматически синхронизировать ваши подписки с учётной записью gpodder.net.</string>
+    <string name="choose_data_directory_message">Укажите корневой каталог для хранения данных. ListenUp создаст необходимые подкаталоги.</string>
+    <string name="rating_volunteers_label">ListenUp разрабатывается добровольцами в свободное от работы время. Благодарность за проделанную ими работу принимается в виде хорошей оценки.</string>
+    <string name="rating_rate">Оценить ListenUp</string>
+    <string name="local_feed_description">Этот виртуальный подкаст был создан путем добавления папки в ListenUp.</string>
+    <string name="echo_share">Мой %d год в подкастах. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Вы покидаете ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">При удалении выпуск пропадёт из ListenUp, а также будет удалён медиафайл с устройства. Повторно загрузить его через ListenUp будет невозможно.</string>
+    <string name="report_bug_message">К сожалению, что-то не работает. Мы будем рады вашей помощи в улучшении ListenUp. Пожалуйста, проверьте наш форум или GitHub, чтобы узнать, сообщалось ли о проблеме ранее. Если нет, сообщите нам, и мы разберемся.</string>
+    <string name="bottom_navigation_deprecation_warning">К сожалению, мы удалим навигацию по сторонам в следующем обновлении. ListenUp разрабатывается небольшой группой волонтёров и поддержка обеих способов навигации на протяжении стала затруднительной.\n\nЕсли вам абсолютно необходима навигация по сторонам, отключите обновления ListenUp в вашем магазине приложений.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Смартфон не совместим. Убедитесь, что вы используете самую актуальную версию ListenUp из Google Play на вашем смартфоне.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Невозможно подключиться к телефону. Убедитесь, что телефон находится поблизости и ListenUp установлен.</string>
+</resources>

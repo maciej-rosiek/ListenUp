@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Selamat datang di ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Siniar yang disarankan tidak memiliki tautan RSS. ListenUp menemukan siniaryang mungkin sesuai</string>
+    <string name="confirm_mobile_download_dialog_message">Penyegaran siniar dengan jaringan data seluler dinonaktifkan pada pengaturan. ListenUp dapat mengunduh episode secara otomatis saat jaringan Wi-Fi tersedia.</string>
+    <string name="unknown_media_key">ListenUp - Kunci media tak diketahui: %1$d</string>
+    <string name="feed_refresh_sum">Tentukan selang ketika ListenUp secara otomatis mencari episode baru</string>
+    <string name="antennapod_version">Versi ListenUp</string>
+    <string name="contributors_summary">Semua orang dapat membuat ListenUp menjadi lebih baik: kontribusi kode, penambahan terjemahan, atau membantu satu sama lain di forum kami</string>
+    <string name="licenses_summary">ListenUp menggunakan perangkat lunak hebat lainnya</string>
+    <string name="database_export_summary">Transfer langganan, episode terputar, dan antrean ke ListenUp di perangkat lain</string>
+    <string name="database_import_summary">Impor pangkalan data ListenUp dari perangkat lain</string>
+    <string name="import_ok">Mohon tekan OK untuk mengulang kembali ListenUp</string>
+    <string name="import_no_downgrade">Pangkalan data ini diekspor pada versi ListenUp yang lebih baru. Versi ListenUp yang Anda miliki belum dapat menangani berkas ini.</string>
+    <string name="gpodnet_description">Gpodder.net adalah layanan penyinkronan siniar bersumber terbuka yang bisa Anda pasang pada peladen Anda sendiri. Gpodder.net tidak bergantung kepada proyek ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync adalah aplikasi Nextcloud sumber terbuka yang dapat Anda instal dengan mudah di server Anda sendiri. Gpodder Sync tidak terkait dengan proyek ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Berikan akses untuk membuka peramban dan kembali ke ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp pada %1$s</string>
+    <string name="gpodnetauth_finish_descr">Selamat! Akun gpodder.net Anda sekarang terhubung dengan perangkat Anda. ListenUp sekarang akan secara otomatis menyinkronkan langganan pada perangkat Anda dengan akun gpodder.net Anda.</string>
+    <string name="local_feed_description">Siniar virtual ini dibuat dengan menambahkan folder ke ListenUp.</string>
+    <string name="rating_rate">Nilai ListenUp</string>
+    <string name="pref_auto_local_delete_dialog_body">Perhatikan bahwa folder lokal ini akan menghapus episode-episode dari ListenUp dan menghapus berkas media dari penyimpanan perangkan Anda. Episode-episode ini tidak akan dapat diundur kembali melalui ListenUp. Anda yakin ingin menyalakan penghapusan otomatis?</string>
+    <string name="pref_auto_local_delete_sum">Hapus juga file yang ditambahkan melalui \"tambahkan folder lokal\". Perlu diketahui bahwa file-file ini tidak diunduh oleh ListenUp dan tidak dapat diunduh ulang</string>
+    <string name="pref_default_page_sum">Layar pertama yang ditampilkan ketika membuka ListenUp</string>
+    <string name="rating_volunteers_label">ListenUp dikembangkan oleh para sukarelawan. Berikan penghargaan kepada mereka dengan memberikan ulasan dan penilaian yang bersifat membangun dan menghargai.</string>
+    <string name="automatic_database_export_summary">Buat cadangan pangkalan data ListenUp setiap tiga hari sekali. Pilihan ini hanya menyimpan lima pencadangan terakhir.</string>
+    <string name="echo_share">Tahun gue %d dalam siniar. #ListenUpEcho</string>
+    <string name="choose_data_directory_message">Silakan pilih dasar folder data Anda. ListenUp akan membuat subdirektori yang sesuai.</string>
+    <string name="visit_social_interact_confirm_dialog_title">Anda sedang meninggalkan ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Menghapus akan menghapus episode dari ListenUp dan menghapus berkas media dari penyimpanan perangkat Anda. Episode tersebut tidak dapat diunduh kembali melalui ListenUp.</string>
+    <string name="report_bug_message">Kami turut menyesal mendengar ada yang tidak berfungsi. Kami ingin bantuan Anda untuk meningkatkan ListenUp. Silakan periksa forum kami atau GitHub untuk melihat apakah masalah ini sudah pernah dilaporkan. Jika belum, beri tahu kami dan kami akan menyelidikinya.</string>
+    <string name="bottom_navigation_deprecation_warning">Sayangnya kami harus menghapus navigasi samping pada pembaruan mendatang. ListenUp dikembangkan oleh sekelompok kecil sukarelawan, dan setelah bertahun-tahun memelihara kedua gaya navigasi, hal itu menjadi beban yang terlalu besar. \n\nJika Anda benar-benar bergantung pada navigasi samping, silakan nonaktifkan pembaruan untuk ListenUp di toko aplikasi Anda.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Ponsel tidak kompatibel. Pastikan Anda menjalankan ListenUp versi terbaru dari Google Play di ponsel Anda.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Tidak dapat menjangkau ponsel. Pastikan ponsel Anda berada di dekat dan ListenUp terpasang.</string>
+</resources>

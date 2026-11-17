@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_feed_url_podcast_found_by_search">Pasiūlyta tinklalaidė neturi RSS nuorodos, „ListenUp“ rado galimą tinklalaidės atitikmenį</string>
+    <string name="unknown_media_key">„ListenUp“ – nežinomas medijos klavišas: %1$d</string>
+    <string name="antennapod_version">„ListenUp“ versija</string>
+    <string name="contributors_summary">Visi gali prisidėti prie „ListenUp“ gerinimo – programiniu kodu, vertimais ar pagalba naudotojams mūsų forume</string>
+    <string name="licenses_summary">„ListenUp“ naudojama kita puiki programinė įranga</string>
+    <string name="database_export_summary">Perkelti prenumeratas, perklausytus epizodus ir eilę į „ListenUp“ kitame įrenginyje</string>
+    <string name="database_import_summary">Importuoti „ListenUp“ duomenų bazę iš kito įrenginio</string>
+    <string name="import_ok">Spauskite „OK“, kad paleisti „ListenUp“ iš naujo</string>
+    <string name="import_no_downgrade">Ši duomenų bazė buvo eksportuota naudojant naujesnę „ListenUp“ versija. Dabartinė įdiegtis nežino, kaip apdorotį šį failą.</string>
+    <string name="synchronization_summary_nextcloud">„Gpodder Sync“ yra atvirojo kodo „Nextcloud“ programėlė, kurią galite nesunkiai įdiegti savo serveryje. „Gpodder Sync“ yra nepriklausoma nuo „ListenUp“ projekto.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Suteikite prieigą atsivėrusioje interneto naršyklėje ir sugrįžkite į „ListenUp“.</string>
+    <string name="gpodnetauth_device_name_default">„ListenUp“ %1$s įrenginyje</string>
+    <string name="gpodnetauth_finish_descr">Sveikiname! Jūsų „gpodder.net“ paskyra susieta su šiuo įrenginiu. Nuo šiol „ListenUp“ automatiškai sinchronizuos prenumeratas šiame įrenginyje su Jūsų „gpodder.net“ paskyra.</string>
+    <string name="local_feed_description">Ši virtuali tinklalaidė sukurta į „ListenUp“ pridėjus aplanką.</string>
+    <string name="choose_data_directory_message">Pasirinkite duomenų aplanko pagrindą. ListenUp sukurs atitinkamus pakatalogius.</string>
+    <string name="rating_volunteers_label">ListenUp kuria savanoriai laisvalaikiu. Pasidalykite savo dėkingumu už jų darbą palikdami gražų įvertinimą.</string>
+    <string name="automatic_database_export_summary">Kas 3 dienas sukurkite atsarginę „ListenUp“ duomenų bazės kopiją. Saugokite tik 5 naujausias atsargines kopijas.</string>
+    <string name="feed_refresh_sum">Nurodykite intervalą, kuriuo „ListenUp“ automatiškai ieško naujų epizodų</string>
+    <string name="home_welcome_title">Sveiki atvykę į ListenUp!</string>
+    <string name="pref_default_page_sum">Ekranas, atveriamas paleidžiant ListenUp</string>
+    <string name="gpodnet_description">Gpodder.net yra atvirojo kodo podkastų sinchronizavimo paslauga, kurią galite įdiegti savo serveryje. Gpodder.net nepriklauso nuo ListenUp projekto.</string>
+    <string name="rating_rate">Įvertinkite ListenUp</string>
+    <string name="confirm_mobile_download_dialog_message">Nustatymuose išjungtas atsisiuntimas per mobilųjį duomenų ryšį. Vėliau ListenUp gali automatiškai atsisiųsti epizodą, kai bus prieinamas Wi-Fi ryšys.</string>
+    <string name="pref_auto_local_delete_dialog_body">Atkreipkite dėmesį, kad vietinių aplankų atveju tai pašalins epizodus iš „ListenUp“ ir ištrins jų medijos failus iš įrenginio saugyklos. Jų nebus galima vėl atsisiųsti per „ListenUp“. įjungti automatinį ištrynimą?</string>
+    <string name="pref_auto_local_delete_sum">Taip pat ištrina per funkciją „pridėti vietinį aplanką“ įtrauktus failus. Atkreipiame dėmesį, kad jie nėra atsiųsti ListenUp ir negali būti atsisiųsti iš naujo</string>
+    <string name="visit_social_interact_confirm_dialog_title">Išeinate iš ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Ištrynus, epizodas pašalinamas iš ListenUp ir ištrinamas medijos failas iš jūsų įrenginio saugyklos. Jo negalima atsisiųsti iš naujo per ListenUp.</string>
+    <string name="echo_share">Mano %d metai su tinklalaidėmis. #ListenUpEcho</string>
+    <string name="bottom_navigation_deprecation_warning">Deja, artimiausiu metu pašalinsime šoninės navigacijos funkciją. ListenUp yra mažos grupės savanorių kūrinys, todėl dviejų navigacijos stilių palaikymas tapo per didele našta. \n\nJei norite išvengti šio pakeitimo, išjunkite ListenUp atnaujinimus savo naudojamoje programėlių parduotuvėje.</string>
+    <string name="report_bug_message">Apgailestaujame, kad kažkas neveikia. Mums praverstų jūsų pagalba, kad patobulintume ListenUp. Apsilankykite mūsų forume arba GitHub ir sužinokite, ar jau pranešta apie klaidą. Jei ne, praneškite, o mes patikrinsime.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Telefonas nesuderinamas. Įsitikinkite, kad telefone turite naujausią ListenUp versiją iš „Google Play“ parduotuvės.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Nepavyko pasiekti telefono. Įsitikinkite, kad telefonas netoliese ir ListenUp yra įdiegta.</string>
+</resources>

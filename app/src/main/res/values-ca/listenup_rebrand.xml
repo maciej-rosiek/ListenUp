@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Benvinguts/des a l\'ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">El pòdcast suggerit no té cap enllaç RSS, ListenUp ha trobat un pòdcast potser coincident</string>
+    <string name="confirm_mobile_download_dialog_message">S\'han desactivat les descàrregues per xarxa mòbil a la configuració. ListenUp podrà descarregar l\'episodi automàticament quan hi hagi conexió Wi-Fi.</string>
+    <string name="unknown_media_key">ListenUp - Control desconegut: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Tingueu en compte que per a les carpetes locals, això eliminarà episodis de l\'ListenUp i els seus fitxers multimèdia de l\'emmagatzematge del dispositiu. No es poden tornar a baixar mitjançant ListenUp. Voleu activar la supressió automàtica?</string>
+    <string name="feed_refresh_sum">Especifiqueu un interval segons el qual ListenUp cercarà nous episodis automàticament</string>
+    <string name="pref_default_page_sum">La pantalla que s\'obre en iniciar ListenUp</string>
+    <string name="antennapod_version">Versió d\'ListenUp</string>
+    <string name="contributors_summary">Tothom pot ajudar a fer ListenUp millor - amb codi, traduccions o ajudant als usuaris al nostre fòrum</string>
+    <string name="licenses_summary">ListenUp usa altre programari genial</string>
+    <string name="database_export_summary">Transferiu subscripcions, episodis escoltats i cua cap a l\'ListenUp d\'un altre dispositiu</string>
+    <string name="database_import_summary">Importa base de dades d\'ListenUp des d\'un altre dispositiu</string>
+    <string name="automatic_database_export_summary">Crea una còpia de seguretat de la base de dades d\'ListenUp cada 3 dies. Només es desen les 5 còpies més recents.</string>
+    <string name="import_ok">Premeu D\'acord per reiniciar ListenUp</string>
+    <string name="import_no_downgrade">Aquesta base de dades va ser exportada amb una versió més nova d\'ListenUp. La versió que tens ara mateixa no sap com processar-la.</string>
+    <string name="gpodnet_description">Gpodder.net és un servei de sincronització de podcasts de codi obert que podeu instal·lar al vostre propi servidor. Gpodder.net és independent del projecte ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync és una aplicació de Nextcloud de codi obert que podeu instal·lar fàcilment al vostre propi servidor. Gpodder Sync és independent del projecte ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Concediu accés des de la finestra del navegador oberta i torneu a ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp a %1$s</string>
+    <string name="gpodnetauth_finish_descr">Felicitats! El vostre compte de gpodder.net s\'ha enllaçat amb el dispositiu. D\'ara endavant, ListenUp sincronitzarà automàticament les subscripcions del dispositiu al vostre compte.</string>
+    <string name="choose_data_directory_message">Seleccioneu l\'arreu del vostre directori d\'informació. ListenUp crearà els subdirectoris pertinents.</string>
+    <string name="rating_volunteers_label">Un grup de voluntaris desenvolupa ListenUp en el seu temps lliure. Compartiu el vostre agraïment per la seva feina deixant una bona puntuació.</string>
+    <string name="rating_rate">Valoreu ListenUp</string>
+    <string name="local_feed_description">Aquest pòdcast virtual es va crear afegint una carpeta a ListenUp.</string>
+    <string name="echo_share">El meu any %d en pòdcasts. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Esteu abandonant ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">En suprimir elimina l\'episodi de l\'ListenUp i suprimeix el fitxer multimèdia de l\'emmagatzematge del dispositiu. No es pot tornar a descarregar a través d\'ListenUp.</string>
+    <string name="report_bug_message">Ens sap greu saber que alguna cosa no funciona. Ens encantaria comptar amb la vostra ajuda per millorar ListenUp. Consulteu el nostre fòrum o GitHub per veure si el problema ja s’ha notificat. Si no és així, feu-nos-ho saber i ho investigarem.</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Vítejte v ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Navrhovaný podcast neměl odkaz na RSS, ListenUp našel podcast, který by mohl odpovídat</string>
+    <string name="confirm_mobile_download_dialog_message">Stahování přes mobilní datové připojení je v nastavení zakázáno. ListenUp může epizodu stáhnout později automaticky, až bude k dispozici Wi-Fi.</string>
+    <string name="unknown_media_key">ListenUp - Neznámý klíč médií: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">U místních složek dojde k odstranění epizod z aplikace ListenUp a k odstranění jejich mediálních souborů z úložiště zařízení. Nelze je znovu stáhnout prostřednictvím ListenUpu. Povolit automatické mazání?</string>
+    <string name="feed_refresh_sum">Zadejte interval, ve kterém bude ListenUp automaticky vyhledávat nové epizody</string>
+    <string name="pref_default_page_sum">Obrazovka, která se otevře při spuštění ListenUp</string>
+    <string name="antennapod_version">Verze aplikace ListenUp</string>
+    <string name="contributors_summary">Kdokoli může pomoct vylepšit ListenUp – kódem, překlady nebo pomáháním ostatním v našem fóru</string>
+    <string name="licenses_summary">ListenUp používá další skvělý software</string>
+    <string name="database_export_summary">Přenést odběry, poslechnuté epizody a frontu do aplikace ListenUp na jiném zařízení</string>
+    <string name="database_import_summary">Importovat ListenUp databázi z jiného zařízení</string>
+    <string name="automatic_database_export_summary">Vytvářet zálohu ListenUp databáze každé 3 dny. Ponechává pouze 5 nejnovějších záloh.</string>
+    <string name="import_no_downgrade">Tato databáze byla exportována z novější verze aplikace ListenUp. Vaše instalovaná verze není schopná ji zpracovat.</string>
+    <string name="gpodnet_description">Gpodder.net je open-source služba pro synchronizaci podcastů, kterou si můžete nainstalovat na vlastní server. Gpodder.net je nezávislý na projektu ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync je open-source aplikace Nextcloud, kterou můžete snadno nainstalovat na svůj vlastní server. Gpodder Sync je nezávislý na projektu ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Povolte přístup pomocí otevřeného webového prohlížeče a pak se vraťte do ListenUpu.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp na %1$s</string>
+    <string name="gpodnetauth_finish_descr">Gratulujeme! Váš gpodder.net účet je nyní úspěšně propojen s vaším zařízením. ListenUp bude automaticky synchronizovat odebírané podcasty s nastaveným účtem na gpodder.net.</string>
+    <string name="rating_rate">Ohodnoťte ListenUp</string>
+    <string name="local_feed_description">Byl založen následující virtuální podcast vytvořením adresáře v ListenUp.</string>
+    <string name="rating_volunteers_label">ListenUp vyvíjejí dobrovolníci ve svém volném čase. Podělte se o své uznání jejich práce zanecháním pěkného hodnocení.</string>
+    <string name="choose_data_directory_message">Zvolte výchozí adresář s daty. ListenUp vytvoří příslušné podadresáře.</string>
+    <string name="echo_share">Můj rok %d v podcastech. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Opouštíte ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Smazání odstraní epizodu z ListenUp a vymaže mediální soubor z úložiště vašeho zařízení. Nelze ji znovu stáhnout prostřednictvím ListenUp.</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">ListenUp\'a hoşgeldin!</string>
+    <string name="no_feed_url_podcast_found_by_search">Önerilen Podcast\'in bir RSS bağlantısı yoktu, ListenUp eşleşebilecek bir Podcast buldu</string>
+    <string name="confirm_mobile_download_dialog_message">Mobil veri bağlantısı üzerinden indirme ayarlarda devre dışı bırakılmıştır. ListenUp, Wi-Fi kullanılabilir olduğunda bölüm daha sonra otomatik olarak indirebilir.</string>
+    <string name="unknown_media_key">ListenUp - Bilinmeyen medya anahtarı: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Bu işlemin, bölümleri ListenUp\'dan kaldıracağını ve medya dosyalarını cihazınızın depolama alanından sileceğini unutmayın. Bu bölümler ListenUp aracılığıyla tekrar indirilemezler. Otomatik silmeyi etkinleştirmek istiyor musunuz?</string>
+    <string name="feed_refresh_sum">ListenUp\'un yeni bölümleri otomatik olarak arayacağı zaman aralığını belirtin</string>
+    <string name="pref_default_page_sum">ListenUp başlatıldığında açılan ekran</string>
+    <string name="antennapod_version">ListenUp sürümü</string>
+    <string name="contributors_summary">Herkes ListenUp\'u daha iyi hale getirmek için yardımda bulunabilir, gerek kod yazarak gerek tercüme ederek, gerekse forumda kullanıcılara yardım ederek</string>
+    <string name="licenses_summary">ListenUp başka yazılımlardan da faydalanıyor</string>
+    <string name="database_export_summary">Abonelikleri, dinlenen bölümleri ve kuyruğu başka bir cihazdaki ListenUp\'a aktarın</string>
+    <string name="database_import_summary">ListenUp veritabanını başka bir cihazdan içe aktarma</string>
+    <string name="automatic_database_export_summary">Her 3 günde bir ListenUp veritabanının yedeğini oluşturun. Sadece en son 5 yedeği saklayın.</string>
+    <string name="import_ok">ListenUp\'u yeniden başlatmak için lütfen OK tuşuna basın</string>
+    <string name="import_no_downgrade">Bu veritabanı ListenUp\'un daha yeni bir sürümü ile dışa aktarıldı. Mevcut kurulumunuz henüz bu dosyayı nasıl işleyeceğini bilmiyor.</string>
+    <string name="gpodnet_description">Gpodder.net, kendi sunucunuza yükleyebileceğiniz açık kaynaklı bir podcast senkronizasyon hizmetidir. Gpodder.net, ListenUp projesinden bağımsızdır.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync, kendi sunucunuza kolayca yükleyebileceğiniz açık kaynaklı bir Nextcloud uygulamasıdır. Gpodder Sync, ListenUp projesinden bağımsızdır.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Açılan web tarayıcısını kullanarak erişim izni verin ve ListenUp\'a geri dönün.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp\'da %1$s</string>
+    <string name="gpodnetauth_finish_descr">Tebrikler! gpodder.net hesabınız cihazınızla ilişkilendirildi. ListenUp bundan sonra gpodder.net hesabınızla üyeliklerinizi otomatik olarak senkronize edecek.</string>
+    <string name="choose_data_directory_message">Lütfen veri klasörünüzün tabanını seçin. ListenUp uygun alt dizinleri oluşturacaktır.</string>
+    <string name="rating_volunteers_label">ListenUp, gönüllüler tarafından boş zamanlarında geliştirilir. Güzel bir puan bırakarak çalışmalarına olan takdirinizi paylaşın.</string>
+    <string name="rating_rate">ListenUp\'u değerlendir</string>
+    <string name="echo_share">Podcastlerde %d yılım. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">ListenUp\'dan ayrılıyorsunuz</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Silme işlemi, bölümü ListenUp\'dan kaldırır ve medya dosyasını aygıtınızın depolama alanından siler. ListenUp üzerinden tekrar indirilemez.</string>
+</resources>

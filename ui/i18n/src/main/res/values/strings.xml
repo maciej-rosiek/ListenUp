@@ -1058,6 +1058,7 @@
     <string name="echo_share_heading">My favorite podcasts</string>
     <string name="echo_share">My year %d in podcasts. #AntennaPodEcho</string>
 
+    <string name="listenup_based_on_antennapod">ListenUp is based on AntennaPod and licensed under the GNU General Public License v3.0. The AntennaPod team does not support ListenUp.</string>
     <string name="ad_detection_label">Ad detection</string>
     <string name="ad_detection_summary_off">Off. Detect dynamically inserted ads after each download</string>
     <string name="ad_detection_summary_compare">Compare downloads</string>

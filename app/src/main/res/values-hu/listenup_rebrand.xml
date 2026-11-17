@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Üdvözli az ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">A javasolt podcastnak nem volt RSS-hivatkozása, az ListenUp talált egy podcastet, amely lehet, hogy egyezik</string>
+    <string name="confirm_mobile_download_dialog_message">A mobilos adatkapcsolaton történő letöltés le van tiltva a beállításokban. Az ListenUp később automatikusan letöltheti az epizódot, amikor a Wi-Fi elérhető lesz.</string>
+    <string name="unknown_media_key">ListenUp – Ismeretlen médiabillentyű: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Vegye figyelembe, hogy a helyi mappák esetén ez eltávolítja az epizódokat az ListenUpból, és törli a médiafájlokat az eszköz tárhelyéről. Nem tölthetők le újra az ListenUpdal. Engedélyezi az automatikus törlést?</string>
+    <string name="pref_default_page_sum">Az ListenUp indításakor megnyitott képernyő</string>
+    <string name="antennapod_version">ListenUp verzió</string>
+    <string name="contributors_summary">Mindenki segíthet az ListenUp még jobbá tételében – kóddal, fordítással vagy a felhasználók segítésével a fórumon</string>
+    <string name="licenses_summary">Az ListenUp más remek szoftvereket használ</string>
+    <string name="database_export_summary">Feliratkozások, meghallgatott epizódok és a lejátszási sor átküldése egy másik eszközök lévő ListenUpnak</string>
+    <string name="database_import_summary">ListenUp adatbázis importálása egy másik eszközről</string>
+    <string name="automatic_database_export_summary">Biztonsági mentés készítése az ListenUp adatbázisáról 3 naponta. Csak az 5 legfrissebbet tartja meg.</string>
+    <string name="import_ok">Nyomja meg az OK gombot az ListenUp újraindításához</string>
+    <string name="import_no_downgrade">Az adatbázis az ListenUp egy újabb verziójából lett exportálva. A jelenlegi telepítése még nem tudja, hogyan kezelje ezt a fájlt.</string>
+    <string name="gpodnet_description">A gpodder.net egy nyílt forráskódú podcast szinkronizációs szolgáltatás, amelyet a saját kiszolgálójára telepíthet. A gpodder.net független az ListenUp projekttől.</string>
+    <string name="synchronization_summary_nextcloud">A Gpodder Sync egy nyílt forráskódú Nextcloudos alkalmazás, amelyet könnyedén telepíthet a saját kiszolgálójára. Az alkalmazás független az ListenUp projekttől.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Adjon hozzáférés a megnyitott webböngészőben, és jöjjön vissza az ListenUphoz.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp ezen: %1$s</string>
+    <string name="gpodnetauth_finish_descr">Gratulálunk! A gpodder.net fiókja most már össze van kapcsolva az eszközével. Az ListenUp automatikusan szinkronizálja az eszközén lévő feliratkozásait a gpodder.net fiókjával.</string>
+    <string name="rating_rate">Az ListenUp értékelése</string>
+    <string name="local_feed_description">Ez a virtuális podcast egy mappa ListenUphoz adásával készült.</string>
+    <string name="choose_data_directory_message">Válassza ki a adatmappája gyökerét. Az ListenUp létre fogja hozni a megfelelő alkönyvtárakat.</string>
+    <string name="rating_volunteers_label">Az ListenUpot önkéntesek fejlesztik a szabadidejükben. Ossza meg a munkájuk iránti elismerését azzal, hogy jó értékelést hagy.</string>
+    <string name="echo_share">%d podcastokban. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Elhagyja az ListenUpot</string>
+    <string name="delete_local_feed_confirmation_dialog_message">A törlés eltávolítja az epizódot az ListenUpból, és törli a médiafájlt az eszköz tárhelyéről. Többé nem tölthető le újra az ListenUpon keresztül.</string>
+</resources>

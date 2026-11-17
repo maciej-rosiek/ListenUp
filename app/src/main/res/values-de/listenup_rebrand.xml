@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Willkommen bei ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Der vorgeschlagene Podcast hat keinen RSS-Link. ListenUp hat einen Podcast gefunden, welcher der gleiche sein könnte</string>
+    <string name="confirm_mobile_download_dialog_message">Das Herunterladen über eine mobile Datenverbindung ist in den Einstellungen deaktiviert. ListenUp kann die Episode später automatisch herunterladen, sobald eine WLAN-Verbindung verfügbar ist.</string>
+    <string name="unknown_media_key">ListenUp – Unbekannte Medientaste: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Lösche auch Dateien, die über „Lokalen Ordner hinzufügen“ hinzugefügt wurden. Beachte, dass diese nicht von ListenUp heruntergeladen wurden und nicht erneut heruntergeladen werden können</string>
+    <string name="pref_auto_local_delete_dialog_body">Beachte, dass bei lokalen Ordnern die Episoden aus ListenUp entfernt und die zugehörigen Mediendateien aus dem Gerätespeicher gelöscht werden. Sie können dann nicht mehr über ListenUp heruntergeladen werden. Automatisches Löschen aktivieren?</string>
+    <string name="feed_refresh_sum">Ein Intervall festlegen, in dem ListenUp automatisch nach neuen Episoden sucht</string>
+    <string name="pref_default_page_sum">Bildschirm, der beim Start von ListenUp angezeigt wird</string>
+    <string name="antennapod_version">ListenUp-Version</string>
+    <string name="contributors_summary">Jeder kann helfen, ListenUp besser zu machen – durch Code, Übersetzungen oder durch Unterstützen anderer Nutzer in unserem Forum</string>
+    <string name="licenses_summary">ListenUp verwendet nützliche andere Software</string>
+    <string name="database_export_summary">Deine Abonnements, angehörten Episoden und die Warteschlange zu ListenUp auf einem anderen Gerät übertragen</string>
+    <string name="database_import_summary">ListenUp-Datenbank von einem anderen Gerät importieren</string>
+    <string name="automatic_database_export_summary">Erstellt alle 3 Tage eine Sicherungskopie der ListenUp-Datenbank. Es werden nur die 5 aktuellsten Sicherungen aufbewahrt.</string>
+    <string name="import_ok">Bitte OK drücken, um ListenUp neu zu starten</string>
+    <string name="import_no_downgrade">Diese Datenbank wurde mit einer neueren Version von ListenUp exportiert. Deine im Moment installierte Version kann die Datei leider nicht bearbeiten.</string>
+    <string name="gpodnet_description">Gpodder.net ist ein Open-Source-Podcast-Synchronisierungsdienst, den du auf deinem eigenen Server installieren kannst. Gpodder.net ist unabhängig vom ListenUp-Projekt.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync ist eine quelloffene Nextcloud-Anwendung, die du einfach auf deinem eigenen Server installieren kannst. Gpodder Sync ist unabhängig vom ListenUp-Projekt.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Gewähre den Zugriff über den geöffneten Webbrowser und kehre zu ListenUp zurück.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp auf %1$s</string>
+    <string name="gpodnetauth_finish_descr">Glückwunsch! Dein gpodder.net-Profil ist jetzt mit deinem Gerät verbunden. Von nun an wird ListenUp automatisch deine Abonnements mit deinem gpodder.net-Profil synchronisieren.</string>
+    <string name="choose_data_directory_message">Bitte wähle das Basisverzeichnis deines Datenordners aus. ListenUp erstellt dann die entsprechenden Unterverzeichnisse.</string>
+    <string name="rating_volunteers_label">ListenUp wird von Freiwilligen in ihrer Freizeit entwickelt. Teile deine Wertschätzung für ihre Arbeit, indem du eine gute Bewertung hinterlässt.</string>
+    <string name="rating_rate">Bewerte ListenUp</string>
+    <string name="echo_thanks_we_are_glad_new">dass du dich dieses Jahr für uns entschieden hast!\n\nEgal ob du von einer anderen App gekommen bist oder mit ListenUp in Podcasts eingestiegen bist: Wir sind froh, dass du da bist!</string>
+    <string name="echo_share">Mein Podcast-Jahr %d. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Du verlässt ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Durch das Löschen wird die Episode aus ListenUp entfernt und die Mediendatei aus dem Gerätespeicher gelöscht. Sie kann nicht erneut über ListenUp heruntergeladen werden.</string>
+    <string name="report_bug_message">Es tut uns leid, dass etwas nicht funktioniert. Wir würden uns über deine Hilfe zur Verbesserung von ListenUp freuen. Bitte schaue in unserem Forum oder auf GitHub nach, ob das Problem bereits gemeldet wurde. Wenn nicht, teile es uns bitte mit, damit wir der Sache nachgehen können.</string>
+    <string name="bottom_navigation_deprecation_warning">Leider müssen wir die Seitenleiste in einem zukünftigen Update entfernen. ListenUp wird von einer kleinen Gruppe von Freiwilligen entwickelt, und nachdem wir jahrelang beide Navigationsarten beibehalten haben, ist der Aufwand mittlerweile zu groß geworden.\n\nWenn du unbedingt auf die Seitenleiste angewiesen bist, deaktiviere bitte die Updates für ListenUp in deinem App-Store.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Das Smartphone ist nicht kompatibel. Bitte stelle sicher, dass auf deinem Smartphone die aktuellste Version von ListenUp aus dem Google Play Store installiert ist.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Das Smartphone konnte nicht erreicht werden. Bitte stelle sicher, dass sich dein Smartphone in der Nähe befindet und ListenUp installiert ist.</string>
+</resources>

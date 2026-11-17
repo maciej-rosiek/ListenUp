@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Вітаємо у ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Запропонований подкаст не мав посилання на RSS-стрічку, але ListenUp вдалося знайти схожий</string>
+    <string name="confirm_mobile_download_dialog_message">Завантаження через мобільний зв\'язок вимкнено в налаштуваннях. ListenUp може автоматично завантажити випуск пізніше, коли з\'явиться Wi-Fi.</string>
+    <string name="unknown_media_key">ListenUp - Невідомий медіа ключ: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Зверніть увагу, що для локальних тек це призведе до видалення випусків з ListenUp і видалення їхніх медіафайлів зі сховища вашого пристрою. Їх не можна буде знову завантажити через ListenUp. Увімкнути автоматичне видалення?</string>
+    <string name="feed_refresh_sum">Укажіть інтервал, з яким ListenUp автоматично шукатиме нові випуски подкастів</string>
+    <string name="pref_default_page_sum">Екран, який відкривається при запуску ListenUp</string>
+    <string name="antennapod_version">Версія ListenUp</string>
+    <string name="contributors_summary">Кожен може допомогти покращити ListenUp - за допомогою коду, перекладу або допомагаючи користувачам на нашому форумі</string>
+    <string name="licenses_summary">ListenUp використовує інше чудове програмне забезпечення</string>
+    <string name="database_export_summary">Перенесіть підписки, прослухані випуски та чергу до ListenUp на іншому пристрої</string>
+    <string name="database_import_summary">Імпортуйте базу даних ListenUp з іншого пристрою</string>
+    <string name="automatic_database_export_summary">Створювати резервну копію бази даних ListenUp кожні 3 дні. Зберігати лише 5 останніх резервних копій.</string>
+    <string name="import_ok">Будь ласка, натисніть OK, щоб перезапустити ListenUp</string>
+    <string name="import_no_downgrade">Ця база даних була експортована з новішою версією ListenUp. Ваша поточна установка ще не знає, як обробляти цей файл.</string>
+    <string name="gpodnet_description">Gpodder.net — це сервіс синхронізації подкастів з відкритим вихідним кодом, який ви можете встановити на власному сервері. Gpodder.net не залежить від проекту ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync — це застосунок Nextcloud з відкритим кодом, який ви можете легко встановити на власний сервер. Gpodder Sync не залежить від проекту ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Надайте доступ в відкритому веб-браузері й поверніться до ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp на %1$s</string>
+    <string name="gpodnetauth_finish_descr">Вітаємо! Ваш обліковий запис gpodder.net тепер пов\'язаний з вашим пристроєм. Відтепер ListenUp буде автоматично синхронізувати підписки на вашому пристрої з вашим акаунтом gpodder.net.</string>
+    <string name="choose_data_directory_message">Будь ласка, виберіть основну теку для файлів ListenUp, ми створимо всі відповідні підкаталоги.</string>
+    <string name="rating_volunteers_label">ListenUp розробляється волонтерами у вільний від роботи час (перекладаю це сидячи в офісі, але тсс!). Ви можете проявити вдячність, залишивши приємну оцінку.</string>
+    <string name="rating_rate">Оцініть ListenUp</string>
+    <string name="local_feed_description">Цей віртуальний подкаст був створений шляхом додавання папки до ListenUp.</string>
+    <string name="visit_social_interact_confirm_dialog_title">Ви залишаєте ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Видалення видаляє епізод з ListenUp та видаляє медіафайл із пам’яті вашого пристрою. Його не можна буде завантажити повторно через ListenUp.</string>
+    <string name="report_bug_message">Шкода, що щось не працює. Ми будемо раді вашій допомозі у покращенні ListenUp. Будь ласка, перевірте наш форум або GitHub, щоб дізнатися, чи про цю проблему вже повідомлялося. Якщо ні, повідомте нас, і ми розглянемо це питання.</string>
+</resources>

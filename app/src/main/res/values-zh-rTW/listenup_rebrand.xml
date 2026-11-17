@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">歡迎來到 ListenUp！</string>
+    <string name="no_feed_url_podcast_found_by_search">建議的 Podcast 沒有 RSS 連結，但 ListenUp 找到了一個可能符合的 Podcast</string>
+    <string name="confirm_mobile_download_dialog_message">在設定中已停用透過行動數據連線下載。ListenUp 稍後可在有 Wi-Fi 時自動下載集數。</string>
+    <string name="unknown_media_key">ListenUp - 媒體按鍵無法辨識：%1$d</string>
+    <string name="pref_auto_local_delete_sum">同時刪除透過「新增本機資料夾」加入的檔案。請注意，這些檔案不是由 ListenUp 下載的，因此無法重新下載</string>
+    <string name="pref_auto_local_delete_dialog_body">請注意，對於本機資料夾，這操作會從 ListenUp 移除劇集，並從你的裝置儲存空間刪除其媒體檔案。無法再透過 ListenUp 下載這些檔案。啟用自動刪除？</string>
+    <string name="feed_refresh_sum">指定 ListenUp 自動尋找新單集的時間間隔</string>
+    <string name="pref_default_page_sum">啟動 ListenUp 時開啟的畫面</string>
+    <string name="antennapod_version">ListenUp 版本</string>
+    <string name="contributors_summary">大家都可以協助讓 ListenUp 變得更好 - 無論是程式設計、翻譯，或是到我們的論壇協助其他人</string>
+    <string name="licenses_summary">ListenUp 中也用了其他很棒的軟體</string>
+    <string name="database_export_summary">將訂閱、聆聽紀錄、待播清單等資訊傳送到其他設備上的 ListenUp</string>
+    <string name="database_import_summary">自其他設備匯入 ListenUp 資料庫</string>
+    <string name="automatic_database_export_summary">每 3 天建立一份 ListenUp 資料庫備份。只保留最近的 5 個備份。</string>
+    <string name="import_ok">請按下 OK 重新啟動 ListenUp</string>
+    <string name="import_no_downgrade">此資料庫是以新版 ListenUp 匯出的，你目前使用的版本無法使用這份資料。</string>
+    <string name="gpodnet_description">Gpodder.net 是一個開放原始碼的 Podcast 同步服務，你可以安裝在自己的伺服器上。Gpodder.net 獨立於 ListenUp 專案。</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync 是一個開放原始碼的 Nextcloud 應用程式，你可以輕鬆安裝在自己的伺服器上。Gpodder Sync 獨立於 ListenUp 專案。</string>
+    <string name="synchronization_nextcloud_authenticate_browser">使用開啟的網頁瀏覽器授予存取權，然後再回到 ListenUp。</string>
+    <string name="gpodnetauth_device_name_default">ListenUp 於 %1$s</string>
+    <string name="gpodnetauth_finish_descr">恭喜，你的 gpodder.net 帳號已經成功連結到當前的設備！ListenUp 今後將自動與 gpodder.net 同步此設備的訂閱清單。</string>
+    <string name="choose_data_directory_message">請選擇你儲存檔案用的資料夾，ListenUp 會自動建立相應的子資料夾。</string>
+    <string name="rating_volunteers_label">ListenUp 是由志工利用空閒時間開發的。請留下好評，分享你對他們工作的欣賞。</string>
+    <string name="rating_rate">評分 ListenUp</string>
+    <string name="local_feed_description">此虛擬 Podcast 是在 ListenUp 裡增加資料夾而產生的。</string>
+    <string name="echo_share">我在 Podcast 中的 %d 年。#ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">你正在離開 ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">刪除操作會將該集從 ListenUp 中移除，並從你的裝置儲存中刪除對應的媒體檔案。該檔案無法透過 ListenUp 再次下載。</string>
+    <string name="report_bug_message">很遺憾聽到有些功能無法正常運作，我們希望能得到你的幫助來改進 ListenUp。請查看我們的論壇或 GitHub，看看該問題是否已經被回報，如果沒有，請告訴我們以進行後續調查。</string>
+    <string name="bottom_navigation_deprecation_warning">很遺憾，我們必須在未來的更新中移除側邊導覽列功能。ListenUp 是由少數志工在閒暇時間開發，同時維護兩種導覽方式多年來負擔已經變得沉重。\n\n如果您完全依賴側邊導覽列來操作，請在應用商店中停用 ListenUp 的自動更新。</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">手機不相容。請確保您的手機上運行的是 Google Play 上最新版本的 ListenUp。</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">無法連接手機。請確保您的手機在附近並已安裝 ListenUp。</string>
+</resources>

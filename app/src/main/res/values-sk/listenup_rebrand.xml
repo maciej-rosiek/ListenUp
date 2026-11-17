@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Vitajte v aplikácii ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Navrhovaný podcast nemal RSS odkaz, ListenUp našiel podcast, ktorý by sa mohol zhodovať</string>
+    <string name="confirm_mobile_download_dialog_message">Sťahovanie cez mobilné dáta je zakázané v nastaveniach. ListenUp môže automaticky stiahnuť epizódu neskôr, keď bude k dispozícii Wi-Fi pripojenie.</string>
+    <string name="unknown_media_key">ListenUp - Neznámy kľúč médií: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Vezmite na vedomie, že táto akcia pre lokálne priečinky odstráni epizódy z aplikácie ListenUp a zmaže ich mediálne súbory z úložiska vášho zariadenia. Tie sa nedajú znova stiahnuť cez ListenUp. Prajete si povoliť automatické odstraňovanie?</string>
+    <string name="feed_refresh_sum">Zvoliť interval alebo čas v ktorom aplikácia ListenUp automaticky vyhľadá nové epizódy</string>
+    <string name="pref_default_page_sum">Obrazovka, ktorá sa otvorí pri spúšťaní aplikácie ListenUp</string>
+    <string name="antennapod_version">Verzia aplikácie ListenUp</string>
+    <string name="contributors_summary">Každý môže pomôcť zlepšiť ListenUp - kódom, prekladmi alebo radami používateľom na našom fóre</string>
+    <string name="licenses_summary">ListenUp používa ďalší skvelý softvér</string>
+    <string name="database_export_summary">Preneste odbery, počúvané epizódy a poradie do aplikácie ListenUp v inom zariadení</string>
+    <string name="database_import_summary">Importuje databázu ListenUp z iného zariadenia</string>
+    <string name="automatic_database_export_summary">Raz za 3 dni sa vytvorí záloha databázy ListenUp. Ponechá sa iba 5 najnovších záloh.</string>
+    <string name="import_ok">Reštartujte ListenUp stlačením tlačidla OK</string>
+    <string name="import_no_downgrade">Táto databáza bola exportovaná s novšou verziou programu ListenUp. Vaša aktuálna inštalácia zatiaľ nevie, ako s týmto súborom zaobchádzať.</string>
+    <string name="gpodnet_description">Gpodder.net je open-source služba na synchronizáciu podcastov, ktorú si môžete nainštalovať na váš vlastný server. Gpodder.net je samostatný projekt a nezávisí na projekte ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync je open-source Nexcloud aplikácia, ktorú si viete ľahko nainštalovať na Váš vlastný server. Aplikácia je nezávislá od projektu ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Udeľte prístup použitím otvoreného webového prehliadača a vráťte sa späť k aplikácii ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp na %1$s</string>
+    <string name="gpodnetauth_finish_descr">Gratulujeme! Váš gpodder.net účet je teraz prepojený s vašim zariadením. ListenUp bude odteraz automaticky synchronizovať odbery vo vašom zariadení s vašim gpodder.net účtom.</string>
+    <string name="choose_data_directory_message">Vyberte hlavný priečinok pre ukladanie súborov. Aplikácia ListenUp vytvorí ďalšie príslušné podpriečinky.</string>
+    <string name="rating_volunteers_label">ListenUp vyvíjajú dobrovoľníci vo svojom voľnom čase. Podeľte sa o svoje ocenenie ich práce zanechaním pekného hodnotenia.</string>
+    <string name="rating_rate">Ohodnoťte ListenUp</string>
+    <string name="local_feed_description">Tento virtuálny podcast bol vytvorený pridaním priečinka do aplikácie ListenUp.</string>
+    <string name="echo_share">Môj rok %d v podcastoch. #ListenUpEcho</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Odstránením sa epizóda odstráni z ListenUp a mediálny súbor sa vymaže z úložiska vášho zariadenia. Nedá sa znova stiahnuť cez ListenUp.</string>
+    <string name="visit_social_interact_confirm_dialog_title">Opúšťate ListenUp</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Zariadenie nie je kompatibilné. Uistite sa, že máte v telefóne poslednú verziu aplikácie ListenUp z obchodu Google Play.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Telefón nie je v dosahu. Uistite sa, že váš telefón je v blízkosti a má nainštalovanú aplikáciu ListenUp.</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">ListenUp में वेलकम!</string>
+    <string name="no_feed_url_podcast_found_by_search">पॉडकास्ट के पास RSS लिंक नहीं है, ListenUp को एक पॉडकास्ट मिला है जो इससे मैच कर रहा है</string>
+    <string name="confirm_mobile_download_dialog_message">सेटिंग में मोबाइल डाटा कनेक्शन पर डाउनलोड करना बंद हैं। Wi-Fi मिलने पर ListenUp बाद में एपिसोड को अपने-आप डाउनलोड कर सकता है।</string>
+    <string name="unknown_media_key">ListenUp - अनजान मीडिया चाबी: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">ध्यान रखें कि लोकल फोल्डर के लिए ये ListenUp से एपिसोड हटा देगा और डिवाइस स्टोरेज से उनका मीडिया फाइल मिटा देगा। उनको फिर ListenUp से डाउनलोड नहीं किया जा सकता। ऑटोमैटिक मिटाना ऑन करें?</string>
+    <string name="feed_refresh_sum">चुनें कि ListenUp कितने-कितने इंटरवल पर नए एपिसोड ढूंढेगा</string>
+    <string name="pref_default_page_sum">चुनें कि ListenUp खुलने पर कौनसा स्क्रीन दिखेगा</string>
+    <string name="antennapod_version">ListenUp वर्ज़न</string>
+    <string name="contributors_summary">हर कोई ListenUp को बेहतर करने में मदद कर सकता हैं - कोड करके, अनुवाद करके, या फॉरम पर दूसरे लोगों की मदद करके</string>
+    <string name="licenses_summary">ListenUp कई लाजवाब सॉफ्टवेयर का इस्तेमाल करता है</string>
+    <string name="database_export_summary">सब्सक्रिप्शन, सुने गए एपिसोड, और कतार को किसी दूसरे डिवाइस के ListenUp में ट्रांस्फर करें</string>
+    <string name="database_import_summary">दूसरे डिवाइस से ListenUp डाटाबेस लाएं</string>
+    <string name="import_ok">ListenUp बंद करके वापस ऑन करने के लिए ठीक है दबाएं</string>
+    <string name="import_no_downgrade">इस डाटाबेस को ListenUp के एक नए वर्ज़न ने निर्यात किया था। आपका वर्ज़न इस फाइल को इस्तेमाल नहीं कर सकता।</string>
+    <string name="synchronization_nextcloud_authenticate_browser">खुले हुए वेब ब्राउज़र से अनुमति दें और ListenUp पर वापस आएं।</string>
+    <string name="gpodnetauth_device_name_default">ListenUp %1$s पर</string>
+    <string name="gpodnetauth_finish_descr">बधाई हो! आपका gpodder.net अकाउंट अब आपके डिवाइस के साथ लिंक हो चुका हैं। अब ListenUp आपके डिवाइस पर सब्सक्रिप्शन को अपने-आप gpodder.net अकाउंट के साथ सिंक करेगा।</string>
+    <string name="local_feed_description">ये वर्चुअल पॉडकास्ट ListenUp में एक फोल्डर जोड़कर बनाया गया था।</string>
+    <string name="visit_social_interact_confirm_dialog_title">आप ListenUp से बाहर जा रहे हैं</string>
+    <string name="delete_local_feed_confirmation_dialog_message">मिटाने से एपिसोड ListenUp से हटा दिया जाता है और डिवाइस स्टोरेज से मिटा दिया जाता है। उसको फिर वापस ListenUp से डाउनलोड नहीं किया जा सकता।</string>
+    <string name="report_bug_message">ये सुनकर बुरा लगा कि आपको दिक्कत का सामना करना पर रहा हैं। अगर आप हमें ListenUp बेहतर करने में मदद करेंगे तो हमें खुशी होगी। हमारा फॉरम चेक करें या GitHub पर देखें कि दिक्कत रिपोर्ट कि गई हैं या नहीं।</string>
+    <string name="automatic_database_export_summary">हर 3 दिन में ListenUp डाटाबेस का बैकअप लें। लेटेस्ट 5 बैकअप रखे जाएंगे।</string>
+    <string name="choose_data_directory_message">अपने डाटा फोल्डर का बेस चुनें। ListenUp ज़रूरी सबफोल्डर बना देगा।</string>
+    <string name="rating_volunteers_label">ListenUp को आपके जैसे लोग अपने फ्री टाइम में बनाते है। अगर आपको ऐप अच्छा लगा तो हमको एक अच्छी रेटिंग देकर थैंक्स बोलें।</string>
+    <string name="rating_rate">ListenUp को रेटिंग दें</string>
+    <string name="echo_share">पॉडकास्ट में मेरा %d। #ListenUpEcho</string>
+</resources>

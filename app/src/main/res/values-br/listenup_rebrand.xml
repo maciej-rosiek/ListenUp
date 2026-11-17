@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Donemat war ListenUp !</string>
+    <string name="no_feed_url_podcast_found_by_search">Ar podskignad erbedet n\'en deus ket un ere RSS. ListenUp en deus kavet unan a c\'hellfe klotañ.</string>
+    <string name="unknown_media_key">ListenUp - stokell vedia dianav: %1$d</string>
+    <string name="pref_default_page_sum">Ar skramm a vez diskwelet da gentañ pa vez lañset ListenUp.</string>
+    <string name="antennapod_version">Handelv ListenUp</string>
+    <string name="contributors_summary">An holl a c\'hall skoazellañ da wellaat ListenUp - en ur c\'houleviñ, en ur dreiñ pe en ur sikour an implijerien en hor forom</string>
+    <string name="licenses_summary">ListenUp a ra gant meziantoù all</string>
+    <string name="database_export_summary">Treuzkas ar c\'houmanantoù, ar rannoù lennet hag el lost da ListenUp war ur benveg all</string>
+    <string name="database_import_summary">Enporzhiañ stlennvon ListenUp adalek ur benveg all</string>
+    <string name="import_ok">Pouezit war OK evit adloc\'hañ ListenUp</string>
+    <string name="gpodnet_description">Gpodder.net a zo ur servij mammenn digor evit sinkronaat podskignadoù a c\'hell bezañ staliet war ho servijer deoc\'h. Gpodder.net a zo dizalc\'h eus ar raktres ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpoddersync a zo un arload mammenn digor evit Nextcloud a c\'hell bezañ staliet war ho servijer en un doare aes. An arload-mañ a zo distag eus ar raktres ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Roit aotre ar moned war ar merdeer web digoret ha deuit en-dro da ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp war %1$s</string>
+    <string name="local_feed_description">Krouet eo bet ar podskignad galloudel-mañ en ur ouzhpennañ un teuliad da ListenUp.</string>
+</resources>

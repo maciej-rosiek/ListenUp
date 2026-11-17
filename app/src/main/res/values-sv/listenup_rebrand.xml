@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Välkommen till ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Den föreslagna podden saknade en RSS-länk. ListenUp hittade en podd som kan stämma</string>
+    <string name="confirm_mobile_download_dialog_message">Nedladdning via mobil dataanslutning är inaktiverat i inställningarna. ListenUp kan ladda ner avsnittet senare automatiskt när Wi-Fi är tillgängligt.</string>
+    <string name="unknown_media_key">ListenUp - Okänd mediaknapp: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Radera även filer som lagts till via ”Lägg till lokal mapp”. De har inte laddats ned av ListenUp och kan därför inte laddas ned igen</string>
+    <string name="pref_auto_local_delete_dialog_body">För lokala mappar innebär detta att avsnitten tas bort från ListenUp och att mediefilerna raderas från enheten. De kan inte laddas ned igen via ListenUp. Vill du aktivera automatisk radering?</string>
+    <string name="feed_refresh_sum">Ange ett intervall med vilket ListenUp letar efter nya avsnitt automatiskt</string>
+    <string name="pref_default_page_sum">Skärm som öppnas när ListenUp startas</string>
+    <string name="antennapod_version">ListenUp-version</string>
+    <string name="contributors_summary">Alla kan hjälpa till att göra ListenUp bättre - med kod, översättningar eller genom att hjälpa användare i vårt forum</string>
+    <string name="licenses_summary">ListenUp förlitar sig på annan utmärkt programvara</string>
+    <string name="database_export_summary">Överför prenumerationer, spelade avsnitt och kön till ListenUp på en annan enhet</string>
+    <string name="database_import_summary">Importera ListenUps databas från en annan enhet</string>
+    <string name="automatic_database_export_summary">Skapa en säkerhetskopia av ListenUps databas var tredje dag. Behåll endast de fem senaste säkerhetskopiorna.</string>
+    <string name="import_ok">Tryck OK för att starta om ListenUp</string>
+    <string name="import_no_downgrade">Denna databas exporterades med en nyare version av ListenUp. Din nuvarande installation vet inte hur den ska hantera filen än.</string>
+    <string name="gpodnet_description">Gpodder.net är en öppen källkodstjänst som du kan installera på en egen server. Gpodder.net är oberende från ListenUp-projektet.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync är en Nextcloud-app med öppen källkod som du enkelt kan installera på din egen server. Gpodder Sync är oberoende från ListenUp-projektet.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Ge tillåtelse med webbläsaren som öppnades och kom tillbaka till ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp på %1$s</string>
+    <string name="gpodnetauth_finish_descr">Grattis! Ditt gpodder.net-konto är nu länkat med din enhet. ListenUp kommer från och med nu automatiskt synkronisera dina prenumerationer på din enhet med ditt gpodder.net-konto.</string>
+    <string name="choose_data_directory_message">Välj baskatalog för dina data. ListenUp kommer att skapa underkatalogerna som krävs.</string>
+    <string name="rating_volunteers_label">ListenUp utvecklas av frivilliga på deras fritid. Visa din uppskattning för deras arbete genom att lämna en positiv bedömning.</string>
+    <string name="rating_rate">Betygsätt ListenUp</string>
+    <string name="local_feed_description">Denna virtuella podcast skapades genom att lägga till en mapp i ListenUp.</string>
+    <string name="echo_share">Mitt år %d i poddar. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Du är på väg att lämna ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Borttagning raderar avsnittet från ListenUp och tar bort mediafilen från din enhets lagringsutrymme. Den kan inte laddas ned igen genom ListenUp.</string>
+    <string name="feed_delete_explanation_archive">När du arkiverar döljs prenumerationen i listan och ListenUp slutar söka efter nya avsnitt. Nedladdningar, statistik och uppspelningsstatus behålls.</string>
+    <string name="report_bug_message">Beklagar att något inte fungerar. Vi skulle uppskatta din hjälp i förbättringsarbetet med ListenUp. För att se om problemet redan inrapporterats, kolla vårt forum eller vår GitHub. Om det saknas, gör en felrapport så undersöker vi problemet.</string>
+    <string name="bottom_navigation_deprecation_warning">Tyvärr måste vi ta bort sidonavigeringen i en framtida uppdatering. ListenUp utvecklas av en liten grupp volontärer, och efter flera års underhåll av båda navigeringssätten har arbetsbördan blivit för stor.\n\nOm du är beroende av sidonavigeringen bör du inaktivera uppdateringar för ListenUp i din appbutik.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Telefonen är inte kompatibel. Se till att du har den senaste versionen av ListenUp från Google Play på din telefon.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Kunde inte nå telefonen. Se till att din telefon är nära och att ListenUp är installerat.</string>
+</resources>

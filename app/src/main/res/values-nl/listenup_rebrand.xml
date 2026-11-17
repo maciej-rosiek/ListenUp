@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Welkom bij ListenUp!</string>
+    <string name="confirm_mobile_download_dialog_message">Downloaden via mobiel internet is uitgeschakeld in de instellingen. ListenUp kan de aflevering later downloaden is Wi-Fi beschikbaar is.</string>
+    <string name="unknown_media_key">ListenUp - onbekende mediasleutel: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Let op: voor lokale mappen zal dit de afleveringen uit ListenUp verwijderen en de bijbehorende bestanden van uw apparaat verwijderen. Ze kunnen niet opnieuw gedownload worden met ListenUp. Automatisch verwijderen aanzetten?</string>
+    <string name="feed_refresh_sum">Geef een interval waarop ListenUp automatisch naar nieuwe afleveringen zoekt</string>
+    <string name="pref_default_page_sum">Scherm dat wordt geopend na het starten van ListenUp</string>
+  <string name="about_pref">Over ListenUp</string>
+    <string name="antennapod_version">ListenUp-versie</string>
+    <string name="contributors_summary">Iedereen kan helpen ListenUp te verbeteren middels programmeren, vertalen of het helpen van gebruikers op het forum</string>
+    <string name="licenses_summary">ListenUp maakt gebruik van andere geweldige software</string>
+    <string name="database_export_summary">Abonnementen, beluisterde afleveringen en wachtrij overzetten naar ListenUp op een ander toestel</string>
+    <string name="database_import_summary">ListenUp database van een ander toestel importeren</string>
+    <string name="automatic_database_export_summary">Maak elke 3 dagen automatisch een reservekopie van de ListenUp-databank. Let op: alleen de recentste 5 worden bewaard.</string>
+    <string name="import_ok">Druk op \'OK\' om ListenUp opnieuw te starten</string>
+    <string name="gpodnet_description">Gpodder.net is een opensource-podcastsynchronisatiedienst die je op je eigen server kunt installeren. Let op: Gpodder.net is niet verbonden aan het ListenUp-project.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync kan als open source Nextcloud-app op een eigen server geïnstalleerd worden. Gpodder Sync is niet betrokken bij het ListenUp-project.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Verleen toegang in de geopende webbrowser en keer terug naar ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp op %1$s</string>
+    <string name="gpodnetauth_finish_descr">Gefeliciteerd! Je gpodder.net-account is nu gekoppeld met dit apparaat. ListenUp synchroniseert voortaan de abonnementen op dit apparaat automatisch met je gpodder.net-account.</string>
+    <string name="rating_rate">Review ListenUp</string>
+    <string name="local_feed_description">De virtuele podcast is aangemaakt door een aan ListenUp toegevoegde map.</string>
+    <string name="choose_data_directory_message">Kies de basis van je data-map. ListenUp zal de passende submappen aanmaken.</string>
+    <string name="rating_volunteers_label">ListenUp wordt door vrijwilligers ontwikkeld, in hun vrije tijd. Deel je waardering van hun werk door een mooie beoordeling achter te laten.</string>
+    <string name="echo_share">Mijn %d in podcasts. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Je verlaat ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Dit verwijdert de aflevering uit ListenUp en verwijdert de mediabestanden van de opslag op je apparaat. Het kan niet opnieuw gedownload worden via ListenUp.</string>
+</resources>

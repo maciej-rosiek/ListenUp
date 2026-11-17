@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Velkommen til ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Foreslått podkast hadde ingen RSS-lenke, ListenUp fant en podkast som kan samsvare</string>
+    <string name="confirm_mobile_download_dialog_message">Nedlasting via mobildata har blitt slått av i innstillingene. ListenUp kan automatisk laste ned episoden senere, når trådløst nett er tilgjengelig.</string>
+    <string name="unknown_media_key">ListenUp – Ukjent medienøkkel: %1$d</string>
+    <string name="pref_auto_local_delete_dialog_body">Merk at for lokale mapper vil dette fjerne episoden fra ListenUp og slette mediefilen fra enhetslagringen. De kan ikke lastes ned på ny gjennom ListenUp. Aktivere Autoslett?</string>
+    <string name="feed_refresh_sum">Angi et intervall der ListenUp ser etter nye episoder automatisk</string>
+    <string name="pref_default_page_sum">Startskjerm når ListenUp åpnes</string>
+    <string name="antennapod_version">ListenUp-versjon</string>
+    <string name="contributors_summary">Alle kan hjelpe med å forbedre ListenUp – med kode, oversettelser eller med å hjelpe brukere i forumet vårt</string>
+    <string name="licenses_summary">ListenUp bruker annen flott programvare</string>
+    <string name="database_export_summary">Overfør abonnementer, avspilte episoder og kø til ListenUp på en annen enhet</string>
+    <string name="database_import_summary">Importer ListenUp-database fra en annen enhet</string>
+    <string name="automatic_database_export_summary">Opprett en sikkerhetskopi av ListenUps database hver 3. dag. Behold kun de 5 siste sikkerhetskopiene.</string>
+    <string name="import_ok">Trykk OK for å starte ListenUp på nytt</string>
+    <string name="import_no_downgrade">Denne databasen ble eksportert fra en nyere versjon av ListenUp. Din versjon av ListenUp kan ikke lese denne filen enda.</string>
+    <string name="gpodnet_description">Gpodder.net er en synkroniseringstjeneste for podkaster basert på åpen kildekode som du kan installere på en egen tjener. Gpodder.net er ikke tilknyttet ListenUp-prosjektet.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync er en app i Nextcloud-appen basert på åpen kildekode som du enkelt kan installere på din egen tjener. Gpodder Sync er ikke tilknyttet ListenUp-prosjektet.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Gi tilgang ved å bruke en nettleser og kom tilbake til ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp på %1$s</string>
+    <string name="gpodnetauth_finish_descr">Gratulerer! Din gpodder.net-konto er nå koblet sammen med din enhet. ListenUp kommer nå til å automatisk synkronisere abonnementer på din enhet med din gpodder.net-konto.</string>
+    <string name="rating_rate">Vurder ListenUp</string>
+    <string name="local_feed_description">Denne virtuelle podkasten ble laget ved å legge til en mappe i ListenUp.</string>
+    <string name="choose_data_directory_message">Velg basen for datamappen din. ListenUp vil lage de nødvendige undermappene.</string>
+    <string name="rating_volunteers_label">ListenUp er utviklet av frivillige på fritiden deres. Del din takknemlighet for arbeidet deres ved å legge igjen en fin tilbakemelding.</string>
+    <string name="echo_share">Mitt %d. år med podkaster. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Du forlater ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Sletting fjerner episoden fra ListenUp og sletter mediefilen fra lagringsplassen på din enhet. Den kan ikke lastes ned på nytt gjennom ListenUp.</string>
+    <string name="report_bug_message">Beklager for at noe ikke fungerer. Vi hadde satt pris på din hjelp til å forbedre ListenUp. Sjekk om feilen allerede er rapporter på forumet eller GitHub. Om det ikke er det, si ifra, så tar vi en titt.</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Dobrodošli v ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Predlagana poddaja nima RSS povezave. ListenUp je našel poddajo, ki morda ustreza</string>
+    <string name="confirm_mobile_download_dialog_message">Prenos preko mobilne podatkovne povezave je onemogočen v nastavitvah. ListenUp lahko pozneje, ko bo na voljo Wi-Fi, epizodo prenese samodejno.</string>
+    <string name="unknown_media_key">ListenUp - Neznan medijski ključ: %1$d</string>
+    <string name="feed_refresh_sum">Določite interval samodejnega iskanja novih epizod v ListenUp</string>
+    <string name="pref_default_page_sum">Zaslon, ki se odpre ob zagonu ListenUp</string>
+    <string name="antennapod_version">ListenUp različica</string>
+    <string name="contributors_summary">Vsakdo lahko pomaga izboljšati ListenUp: s kodo, prevodi ali z nudenjem pomoči uporabnikom na našem forumu</string>
+    <string name="licenses_summary">ListenUp uporablja drugo odlično programsko opremo</string>
+    <string name="database_export_summary">Prenesite naročnine, poslušane epizode in čakalno vrsto na ListenUp, na drugo napravo</string>
+    <string name="database_import_summary">Uvozite bazo podatkov ListenUp iz druge naprave</string>
+    <string name="import_ok">Pritisnite OK, da znova zaženete ListenUp</string>
+    <string name="import_no_downgrade">Ta zbirka podatkov je bila izvožena z novejšo različico ListenUp. Vaša trenutna namestitev še ne ve, kako ravnati s to datoteko.</string>
+    <string name="gpodnet_description">Gpodder.net je odprtokodna storitev sinhronizacije poddaj, ki je neodvisna od projekta ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpoddersync je odportokodna Nextcloud aplikacija, katero lahko enostavno namestite na vaše lastni stsrežnik. Ta aplikacija je neodvisna od projekta ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp je na %1$s</string>
+    <string name="gpodnetauth_finish_descr">Čestitam! Vaš račun gpodder.net je zdaj povezan z vašo napravo. ListenUp bo od zdaj naprej samodejno sinhroniziral naročnine na vaši napravi z vašim računom gpodder.net.</string>
+    <string name="local_feed_description">Ta virtualna poddaja je bila ustvarjen z dodajanjem mape v ListenUp.</string>
+    <string name="echo_share">Moje leto %d v poddajah. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Zapuščate ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Brisanje odstrani epizodo iz ListenUp in izbriše medijske datoteke iz vaše naprave. Le-ta več no more biti prenesena preko ListenUp.</string>
+</resources>

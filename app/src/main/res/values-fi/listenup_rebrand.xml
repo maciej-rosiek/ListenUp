@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Tervetuloa ListenUpiin!</string>
+    <string name="no_feed_url_podcast_found_by_search">Ehdotetulla podcastilla ei ollut RSS-linkkiä, ListenUp löysi mahdollisesti vastaavan podcastin</string>
+    <string name="confirm_mobile_download_dialog_message">Lataaminen mobiilidatayhteydellä on poissa päältä asetuksissa. ListenUp voi ladata jakson myöhemmin automaattisesti, kun Wi-Fi-yhteys on käytettävissä.</string>
+    <string name="unknown_media_key">ListenUp - Tuntematon media-avain: %1$d</string>
+    <string name="pref_default_page_sum">Näkymä, joka avataan ListenUpin käynnistyessä</string>
+    <string name="antennapod_version">ListenUp versio</string>
+    <string name="contributors_summary">Kuka tahansa voi auttaa tekemään ListenUpista paremman - koodilla, käännöksillä, tai avustamalla käyttäjiä foorumilla</string>
+    <string name="licenses_summary">ListenUp käyttää muita hienoja ohjelmistoja</string>
+    <string name="database_export_summary">Siirrä tilaukset, kuunnellut jaksot ja jono toisella laitteella olevaan ListenUpiin</string>
+    <string name="database_import_summary">Tuo ListenUp-tietokanta toiselta laitteelta</string>
+    <string name="import_ok">Valitse OK käynnistääksesi ListenUpin uudelleen</string>
+    <string name="import_no_downgrade">Tämä tietokanta on viety ListenUpin uudemmalla versiolla. Tämänhetkinen versiosi ei vielä osaa käsitellä sitä.</string>
+    <string name="gpodnet_description">Gpodder.net on avoimen lähdekoodin podcast-synkronointipalvelu, jonka voit asentaa omalle palvelimellesi. Gpodder.net on riippumaton ListenUp-projektista.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync on avoimen lähdekoodin Nextcloud-sovellus, jonka voit helposti asentaa omalle palvelimellesi. Gpodder Sync on riippumaton ListenUp-projektista.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Myönnä käyttöoikeus avatun verkkoselaimen avulla ja palaa ListenUpiin.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp laitteella %1$s</string>
+    <string name="gpodnetauth_finish_descr">Onneksi olkoon! Sinun gpodder.net tili on liitetty laitteeseesi. ListenUp alkaa automaattisesti synkronoimaan gpodder.net tiliisi.</string>
+    <string name="rating_rate">Arvostele ListenUp</string>
+    <string name="local_feed_description">Tämä virtuaalinen podcast luotiin lisäämällä kansio ListenUpiin.</string>
+    <string name="choose_data_directory_message">Valitse tietokansiosi perusta. ListenUp luo asianmukaiset alihakemistot.</string>
+    <string name="rating_volunteers_label">ListenUpia kehittävät vapaaehtoiset vapaa-ajallaan. Jaa arvostuksesi heidän työstään jättämällä hyvä arvosana.</string>
+    <string name="automatic_database_export_summary">Luo ListenUp-tietokannasta varmuuskopio kolmen päivän välein. Säilytä vain viisi viimeisintä varmuuskopiota.</string>
+    <string name="pref_auto_local_delete_sum">Poista myös \"lisää paikallinen tiedosto\":n kautta lisätyt tiedostot. Huomaa, että nämä eivät ole ListenUpin lataamia ja niitä ei voi ladata uudelleen</string>
+    <string name="pref_auto_local_delete_dialog_body">Huomaa, että tämä poistaa paikallisten kansioiden jaksot ListenUpista ja niiden mediatiedostot laitteen tallennustilasta. Niitä ei voi ladata uudelleen ListenUpin kautta. Otetaanko automaattinen poisto käyttöön?</string>
+    <string name="echo_share">Vuodeni %d podcasteissa. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Olet poistumassa ListenUpista</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Poistaminen poistaa jakson ListenUpista ja poistaa mediatiedoston laitteen tallennustilasta. Sitä ei voi ladata uudelleen ListenUpin kautta.</string>
+    <string name="report_bug_message">Harmi kuulla, että jokin ei toimi. Me otamme mielellämme vastaan apuasi ListenUpin kehitykseen. Käy katsomassa meidän foorumissa tai GitHubissa ja katso onko kohtaamastasi virheestä jo ilmoitettu. Jos ei, kerro meille ja me tutkimme asian.</string>
+    <string name="bottom_navigation_deprecation_warning">Valitettavasti meidän on poistettava sivunavigaatio tulevaisuudessa. ListenUpia kehittää pieni vapaaehtoistiimi ja molempien navigointikeinojen tukemisen vuosien jälkeen se on alkanut aiheuttamaan liikaa työtä. \n\nJos sivunavigaatio on sinulle erittäin tärkeä, poista ListenUpin päivitykset käytöstä sovelluskaupassasi.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Yhteensopimaton puhelin. Varmista, että käytät puhelimellasi ListenUpin uusinta versiota Google Playsta.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Puhelin ei saavutettavissa. Varmista, että puhelimesi on lähellä ja, että ListenUp on asennettu.</string>
+</resources>

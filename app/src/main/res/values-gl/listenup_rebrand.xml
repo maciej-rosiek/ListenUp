@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Benvida a ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">O podcast suxerido non ten ligazón RSS, ListenUp atopou un podcast que podería corresponder</string>
+    <string name="confirm_mobile_download_dialog_message">Desactivouse nos axustes a descarga usando datos do móbil. ListenUp pode descargar máis tarde o episodio cando a Wi-Fi estea dispoñible.</string>
+    <string name="unknown_media_key">ListenUp - chave de medios descoñecida: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Tamén elimina os ficheiros engadidos a través de «engadir cartafol local». Estes ficheiros non os descargou ListenUp e non se poden volver descargar</string>
+    <string name="pref_auto_local_delete_dialog_body">Ten en conta que respecto dos cartafoles locais eliminarás os episodios de ListenUp e elimnarás os ficheiros multimedia da almacenaxe do dispositivo. Non poderás descargalos de novo usando ListenUp. Activar eliminación automática?</string>
+    <string name="feed_refresh_sum">Indicar cada canto tempo debe ListenUp comprobar se hai episodios novos</string>
+    <string name="pref_default_page_sum">Pantalla que se mostra cando inicias ListenUp</string>
+    <string name="antennapod_version">Versión ListenUp</string>
+    <string name="contributors_summary">Calquera persoa pode axudar a mellorar ListenUp - con código, traducións ou botando unha man no foro</string>
+    <string name="licenses_summary">ListenUp benefíciase de outro software</string>
+    <string name="database_export_summary">Mover as subscricións, episodios escoitados e cola a ListenUp en outro dispositivo</string>
+    <string name="database_import_summary">Importar a base de datos ListenUp dende outro dispositivo</string>
+    <string name="automatic_database_export_summary">Crear unha copia de apoio da base de datos de ListenUp cada 3 días. Manter só as últimas 5 copias.</string>
+    <string name="import_ok">Preme OK para reiniciar ListenUp</string>
+    <string name="import_no_downgrade">A base de datos foi exportada cunha versión máis recente de ListenUp. A instalación actual non sabe como xestionar este ficheiro.</string>
+    <string name="gpodnet_description">Gpodder.net é un servizo de código aberto para a sincronización de podcasts que podes instalar no teu propio servidor. Gpodder.net é independente do proxecto ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync é unha app Nextcloud de código aberto que podes instalar fácilmente no teu servidor. Gpodder Sync é independente do proxecto ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Conceder acceso usando o navegador web e volver a ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp en %1$s</string>
+    <string name="gpodnetauth_finish_descr">Parabéns! A túa conta gpodder.net está conectada ao dispositivo. ListenUp poderá agora sincronizar automaticamente as túas subscricións no dispositivo na conta de gpodder.net.</string>
+    <string name="choose_data_directory_message">Elixe o cartafol base para os datos. ListenUp creará os subdirectorios que precise.</string>
+    <string name="rating_volunteers_label">ListenUp desenvólvena persoas voluntarias no seu tempo libre. Agradece o seu traballo deixando unha boa valoración.</string>
+    <string name="rating_rate">Valora ListenUp</string>
+    <string name="local_feed_description">O podcast virtual foi creado ó engadir un cartafol a ListenUp.</string>
+    <string name="echo_share">O meu %d nos podcasts. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Estás saíndo de ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Ao eliminar retiras o episodio de ListenUp e eliminas o ficheiro da almacenaxe do dispositivo. Non se poderá descargar novamente usando ListenUp.</string>
+    <string name="report_bug_message">Lamentamos que algo non funcione ben. Agradecemos que nos axudes a mellorar ListenUp. Mira no foro ou en GitHub se xa alguén informou sobre esta incidencia. Se non é así fáinolo saber e investigaremos o asunto.</string>
+    <string name="bottom_navigation_deprecation_warning">Desafortunadamente temos que eliminar o panel lateral de navegación en futuras versións. ListenUp créana un pequeno grupo de persoas voluntarias, e mantivemos os dous estilos de navegación durante anos, pero converteuse nun crebacabezas complicado.\n\nSe dependes absolutamente do panel de navegación lateral, desactiva as actualizacións de ListenUp no xestor de aplicacións do dispositivo.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Teléfono incompatíbel. Comproba que estás utilizando a versión máis recente de ListenUp desde Google Play no teu teléfono.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Non se acadou o teléfono. Comproba que o teléfono está preto e ListenUp instalada.</string>
+</resources>

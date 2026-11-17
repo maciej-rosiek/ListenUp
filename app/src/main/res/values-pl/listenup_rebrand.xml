@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Witamy w ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Zasugerowany podcast nie ma linku RSS, aplikacja ListenUp znalazła inny podcast, który może pasować</string>
+    <string name="confirm_mobile_download_dialog_message">Pobieranie za pomocą sieci komórkowej jest wyłączone w ustawieniach. ListenUp może później pobrać odcinek automatycznie, kiedy będzie dostępna sieć Wi-Fi.</string>
+    <string name="unknown_media_key">ListenUp - Nieznany klawisz: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Usuń też pliki dodane za pomocą opcji \"dodaj folder lokalny\". Pamiętaj, że te pliki nie są pobrane przez ListenUp i nie mogą zostać pobrane ponownie po usunięciu</string>
+    <string name="pref_auto_local_delete_dialog_body">Uwaga! W przypadku folderów lokalnych usunięcie spowoduje skasowanie odcinków z ListenUp oraz plików z twojego urządzenia. Nie można będzie ich pobrać ponownie za pomocą ListenUp. Aktywować automatyczne usuwanie?</string>
+    <string name="pref_default_page_sum">Ekran wyświetlany po uruchomieniu ListenUp</string>
+    <string name="antennapod_version">Wersja ListenUp</string>
+    <string name="contributors_summary">Każdy może pomóc ulepszyć ListenUp - pisząc kod, tłumacząc lub pomagając użytkownikom na forum</string>
+    <string name="licenses_summary">ListenUp używa różnego świetnego oprogramowania/bibliotek</string>
+    <string name="database_export_summary">Przenieś subskrypcje, listę odsłuchanych odcinków i kolejkę do ListenUp na innym urządzeniu</string>
+    <string name="database_import_summary">Importuj bazę danych ListenUp z innego urządzenia</string>
+    <string name="automatic_database_export_summary">Stwórz kopię zapasową bazy danych ListenUp co 3 dni. Zachowaj tylko 5 najnowszych kopii.</string>
+    <string name="import_ok">Naciśnij OK, aby zrestartować ListenUp</string>
+    <string name="import_no_downgrade">Baza danych została eksportowana z nowszej wersji ListenUp. Twoja wersja nie potrafi obsłużyć tego pliku.</string>
+    <string name="gpodnet_description">Gpodder.net to serwis open-source do synchronizacji podcastów, który możesz zainstalować na własnym serwerze. Gpodder.net nie jest powiązany z projektem ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync to aplikacja Nextcloud typu open-source, którą możesz łatwo zainstalować na swój serwer. Aplikacja nie jest powiązana z projektem ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Zezwól na dostęp w otwartym oknie przeglądarki i wróć do aplikacji ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp na %1$s</string>
+    <string name="gpodnetauth_finish_descr">Gratulacje! Twoje konto na gpodder.net jest połączone z urządzeniem. ListenUp będzie automatycznie synchronizować subskrypcje na urządzeniu z kontem na gpodder.net.</string>
+    <string name="rating_volunteers_label">ListenUp jest rozwijany przez wolontariuszy w ich wolnym czasie. Podziel się swoją wdzięcznością za ich pracę, zostawiając miłą ocenę.</string>
+    <string name="rating_rate">Oceń ListenUp</string>
+    <string name="local_feed_description">Ten wirtualny podcast został stworzony przez dodanie lokalnego folderu do ListenUp.</string>
+    <string name="choose_data_directory_message">Wybierz, proszę, bazowy folder dla twoich danych. ListenUp utworzy konieczne podkatalogi.</string>
+    <string name="echo_share">Mój rok %d w podcastach. #ListenUpEcho</string>
+    <string name="visit_social_interact_confirm_dialog_title">Wychodzisz z aplikacji ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Kasowanie usuwa odcinek z ListenUp i usuwa plik z pamięci urządzenia. Nie można go ponownie pobrać za pomocą ListenUp.</string>
+    <string name="report_bug_message">Przykro słyszeć, że coś nie działa. Doceniamy twój wkład w rozwój ListenUp. Możesz sprawdzić, na forum lub GitHubie, czy został zaraportowany już ten błąd. Jeżeli nie, daj nam znać, i zajmiemy się tym.</string>
+</resources>

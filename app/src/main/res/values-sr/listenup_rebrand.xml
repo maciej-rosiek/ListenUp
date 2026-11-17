@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Добро дошли у ListenUp!</string>
+    <string name="no_feed_url_podcast_found_by_search">Предложени подкаст није имао RSS линк, ListenUp је пронашао подкаст који би могао да се подудара</string>
+    <string name="unknown_media_key">ListenUp – Непознати кључ медија: %1$d</string>
+    <string name="feed_refresh_sum">Одредите интервал у којем ListenUp аутоматски тражи нове епизоде</string>
+    <string name="pref_default_page_sum">Екран који се отвара приликом покретања ListenUp-а</string>
+    <string name="antennapod_version">Верзија ListenUp-а</string>
+    <string name="contributors_summary">Свако може помоћи да ListenUp буде бољи - кодом, преводима или помажући корисницима на нашем форуму</string>
+    <string name="licenses_summary">ListenUp користи други одличан софтвер</string>
+    <string name="database_export_summary">Пренесите претплате, слушане епизоде и редослед у ListenUp на другом уређају</string>
+    <string name="database_import_summary">Увезите базу података ListenUp-а са другог уређаја</string>
+    <string name="import_ok">Додирните ОК, како бисте рестартовали ListenUp</string>
+    <string name="import_no_downgrade">Ова база података је извезена са новијом верзијом ListenUp-а. Ваша тренутна инсталација још увек не зна како да рукује овим фајлом.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync је Nextcloud апликација отвореног кода коју можеш лако да инсталирате на сопствени сервер. Апликација је независна од пројекта ListenUp.</string>
+    <string name="gpodnet_description">Gpodder.net је услуга синхронизације подкаста отвореног кода коју можете да инсталирате на сопствени сервер. Gpodder.net је независан од пројекта ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp на %1$s</string>
+    <string name="gpodnetauth_finish_descr">Честитамо! Ваш gpodder.net налог је сада повезан са вашим уређајем. ListenUp ће од сада аутоматски синхронизовати претплате на вашем уређају са вашим gpodder.net налогом.</string>
+    <string name="choose_data_directory_message">Изаберите базу фолдера података. ListenUp ће направити одговарајуће потфолдере.</string>
+    <string name="echo_share">Моја %d. у подкастима. #ListenUpEcho</string>
+    <string name="pref_auto_local_delete_dialog_body">Имајте на уму да ће за локалне фолдере ово уклонити епизоде са ListenUp-а и избрисати њихове фајлове медија из меморије вашег уређаја. Не могу се поново преузети преко ListenUp-а. Омогућити аутоматско брисање?</string>
+    <string name="confirm_mobile_download_dialog_message">Преузимање преко мобилних података је онемогућено у подешавањима. ListenUp може касније аутоматски преузети епизоду када Wi-Fi буде доступан.</string>
+    <string name="automatic_database_export_summary">Направите резервну копију базе података ListenUp-а свака 3 дана. Задржите само 5 најновијих резервних копија.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Одобрите приступ помоћу отвореног веб-прегледача и вратите се у ListenUp.</string>
+    <string name="rating_volunteers_label">ListenUp развијају волонтери у слободно време. Поделите своју захвалност за њихов рад остављајући лепу оцену.</string>
+    <string name="rating_rate">Оцени ListenUp</string>
+    <string name="local_feed_description">Овај виртуелни подкаст је направљен додавањем фолдера у ListenUp.</string>
+    <string name="visit_social_interact_confirm_dialog_title">Напуштате ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Брисање уклања епизоду са ListenUp-а и брише медијски фајл из меморије вашег уређаја. Не може се поново преузети путем ListenUp-а.</string>
+    <string name="report_bug_message">Жао нам је да чујемо да нешто не ради. Волели бисмо твоју помоћ у побољшању ListenUp-a. Молимо те да посетиш наш форум или GitHub како би проверио да ли је проблем већ пријављен. Уколико није, јави нам и ми ћемо да истражимо.</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_feed_url_podcast_found_by_search">Το προτεινόμενο podast δεν διαθέτει κάποιον σύνδεσμο RSS, το ListenUp βρήκε ένα podcast που θα μπορούσε να ταιριάζει</string>
+    <string name="confirm_mobile_download_dialog_message">Η λήψη μέσω δεδομένων κινητής τηλεφωνίας είναι απενεργοποιημένη στις ρυθμίσεις. Το ListenUp θα κατεβάσει αυτόματα το επεισόδιο αργότερα, όταν συνδεθείτε σε κάποιο δίκτυο Wi-Fi.</string>
+    <string name="unknown_media_key">ListenUp - Άγνωστο πλήκτρο πολυμέσων: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Να διαγράφονται επίσης τα αρχεία που προστέθηκαν μέσω της επιλογής \"προσθήκη τοπικού φακέλου\". Λάβετε υπόψη ότι αυτά τα αρχεία δεν έχουν ληφθεί από το ListenUp και δεν είναι δυνατή η εκ νέου λήψη τους</string>
+    <string name="pref_auto_local_delete_dialog_body">Λάβετε υπόψη ότι για τους τοπικούς φακέλους αυτό θα αφαιρέσει τα επεισόδια από το ListenUp και θα διαγράψει τα αρχεία πολυμέσων από τον αποθηκευτικό χώρο της συσκευής σας. Δεν μπορούν να ληφθούν ξανά μέσω του ListenUp. Ενεργοποίηση αυτόματης διαγραφής;</string>
+    <string name="feed_refresh_sum">Προσδιορίστε ένα μεσοδιάστημα κατά το οποίο το ListenUp θα ψάξει αυτόματα για νέα επεισόδια</string>
+    <string name="pref_default_page_sum">Η οθόνη που ανοίγει κατά την εκκίνηση του ListenUp</string>
+    <string name="antennapod_version">Έκδοση ListenUp</string>
+    <string name="contributors_summary">Όλοι μπορούν να βοηθήσουν στη βελτίωση του ListenUp - με κώδικα, μεταφράσεις ή βοηθώντας τους χρήστες στο φόρουμ μας</string>
+    <string name="licenses_summary">Το ListenUp χρησιμοποιεί άλλο εξαιρετικό λογισμικό</string>
+    <string name="database_export_summary">Μεταφορά συνδρομών, ακουσμένων επεισοδίων και ουράς στο ListenUp σε άλλη συσκευή</string>
+    <string name="database_import_summary">Εισαγωγή βάσης δεδομένων ListenUp από άλλη συσκευή</string>
+    <string name="automatic_database_export_summary">Δημιουργία αντιγράφου ασφαλείας της βάσης δεδομένων του ListenUp κάθε 3 ημέρες. Διατήρηση μόνο των 5 πιο πρόσφατων αντιγράφων ασφαλείας.</string>
+    <string name="import_ok">Πατήστε OK για επανεκκίνηση του ListenUp</string>
+    <string name="import_no_downgrade">Αυτή η βάση δεδομένων έχει εξαχθεί με νεότερη έκδοση του ListenUp. Η τρέχουσα εγκατάστασή σας δεν υποστηρίζει ακόμη τη διαχείριση αυτού του αρχείου.</string>
+    <string name="gpodnet_description">Το gpodder.net είναι μια υπηρεσία συγχρονισμού podcast ανοικτού κώδικα, την οποία μπορείτε να εγκαταστήσετε στον δικό σας διακομιστή. Το gpodder.net είναι ανεξάρτητο από το έργο ListenUp.</string>
+    <string name="synchronization_summary_nextcloud">Το Gpodder Sync είναι μια εφαρμογή ανοικτού κώδικα για το Nextcloud, την οποία μπορείτε να εγκαταστήσετε εύκολα στον δικό σας διακομιστή. Το Gpodder Sync είναι ανεξάρτητο από το έργο ListenUp.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Παραχωρήστε πρόσβαση χρησιμοποιώντας το πρόγραμμα περιήγησης ιστού που ανοίξατε και επιστρέψτε στο ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp στο %1$s</string>
+    <string name="gpodnetauth_finish_descr">Συγχαρητήρια! Ο λογαριασμός σας στο gpodder.net συνδέθηκε με τη συσκευή σας. Το ListenUp θα συγχρονίζει πλέον αυτόματα τις συνδρομές στη συσκευή σας με τον λογαριασμό σας στο gpodder.net.</string>
+    <string name="choose_data_directory_message">Επιλέξτε τη βάση του φακέλου δεδομένων σας. Το ListenUp θα δημιουργήσει τους κατάλληλους υποκαταλόγους.</string>
+    <string name="rating_volunteers_label">Το ListenUp αναπτύσσεται από εθελοντές στον ελεύθερο χρόνο τους. Δείξτε την εκτίμησή σας για το έργο τους, αφήνοντας μια θετική αξιολόγηση.</string>
+    <string name="rating_rate">Αξιολόγηση του ListenUp</string>
+    <string name="local_feed_description">Αυτό το εικονικό podcast δημιουργήθηκε με την προσθήκη ενός φακέλου στο ListenUp.</string>
+    <string name="echo_share">Η χρονιά μου στα podcast το %d. #ListenUpEcho</string>
+    <string name="report_bug_message">Λυπούμαστε που κάτι δεν λειτουργεί σωστά. Θα εκτιμούσαμε τη βοήθειά σας για τη βελτίωση του ListenUp. Ελέγξτε το φόρουμ μας ή το GitHub για να δείτε αν το πρόβλημα έχει ήδη αναφερθεί. Αν όχι, ενημερώστε μας και θα το διερευνήσουμε.</string>
+    <string name="visit_social_interact_confirm_dialog_title">Αποχωρείτε από το ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Η διαγραφή αφαιρεί το επεισόδιο από το ListenUp και διαγράφει το αρχείο πολυμέσων από τον αποθηκευτικό χώρο της συσκευής σας. Δεν είναι δυνατή η εκ νέου λήψη του μέσω του ListenUp.</string>
+    <string name="bottom_navigation_deprecation_warning">Δυστυχώς, θα πρέπει να αφαιρέσουμε την πλαϊνή γραμμή πλοήγησης σε μια μελλοντική ενημέρωση. Το ListenUp αναπτύσσεται από μια μικρή ομάδα εθελοντών και, μετά από χρόνια υποστήριξης και των δύο στυλ πλοήγησης, η διατήρησή τους έχει γίνει πλέον υπερβολικά δύσκολη.\n\nΕάν η πλαϊνή γραμμή πλοήγησης σας είναι απολύτως απαραίτητη, απενεργοποιήστε τις ενημερώσεις για το ListenUp στο κατάστημα εφαρμογών σας.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Το τηλέφωνο δεν είναι συμβατό. Βεβαιωθείτε ότι στο τηλέφωνό σας εκτελείτε την πιο πρόσφατη έκδοση του ListenUp από το Google Play.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Δεν ήταν δυνατή η σύνδεση με το τηλέφωνο. Βεβαιωθείτε ότι το τηλέφωνό σας βρίσκεται κοντά και ότι το ListenUp είναι εγκατεστημένο.</string>
+</resources>

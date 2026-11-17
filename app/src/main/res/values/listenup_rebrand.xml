@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Welcome to ListenUp!</string>
+    <string name="visit_social_interact_confirm_dialog_title">You are leaving ListenUp</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Deleting removes the episode from ListenUp and deletes the media file from your device storage. It cannot be downloaded again through ListenUp.</string>
+    <string name="no_feed_url_podcast_found_by_search">The suggested podcast did not have an RSS link, ListenUp found a podcast that could match</string>
+    <string name="confirm_mobile_download_dialog_message">Downloading over mobile data connection is disabled in the settings. ListenUp can download the episode later automatically when Wi-Fi is available.</string>
+    <string name="unknown_media_key">ListenUp - Unknown media key: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Also delete files added through \"add local folder\". Note that these are not downloaded by ListenUp and cannot be re-downloaded</string>
+    <string name="pref_auto_local_delete_dialog_body">Note that for local folders this will remove episodes from ListenUp and delete their media files from your device storage. They cannot be downloaded again through ListenUp. Enable auto delete?</string>
+    <string name="feed_refresh_sum">Specify an interval at which ListenUp looks for new episodes automatically</string>
+    <string name="bottom_navigation_deprecation_warning">Unfortunately we have to remove side navigation in a future update. ListenUp is developed by a small group of volunteers, and after maintaining both navigation styles for years, it has become too much overhead. \n\nIf you absolutely rely on side navigation, please disable updates for ListenUp in your app store.</string>
+    <string name="pref_default_page_sum">Screen that is opened when starting ListenUp</string>
+    <string name="report_bug_message">Sorry to hear something isn’t working. We’d love your help to improve ListenUp. Please check our forum or GitHub to see if the issue has already been reported. If not, let us know and we’ll investigate.</string>
+    <string name="antennapod_version">ListenUp version</string>
+    <string name="contributors_summary">Everyone can help to make ListenUp better - with code, translations or by helping users in our forum</string>
+    <string name="licenses_summary">ListenUp uses other great software</string>
+    <string name="database_export_summary">Transfer subscriptions, listened episodes and queue to ListenUp on another device</string>
+    <string name="database_import_summary">Import ListenUp database from another device</string>
+    <string name="automatic_database_export_summary">Create a backup of the ListenUp database every 3 days. Only keep the 5 most recent backups.</string>
+    <string name="import_ok">Please press OK to restart ListenUp</string>
+    <string name="import_no_downgrade">This database was exported with a newer version of ListenUp. Your current installation does not yet know how to handle this file.</string>
+    <string name="gpodnet_description">Gpodder.net is an open-source podcast synchronization service that you can install on your own server. Gpodder.net is independent of the ListenUp project.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync is an open-source Nextcloud app that you can easily install on your own server. Gpodder Sync is independent of the ListenUp project.</string>
+    <string name="synchronization_provider_chooser_explanation">Devices need a central server to synchronize. ListenUp does not offer such a central synchronization server, but allows you to connect with the different types of servers listed below.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Grant access using the opened web browser and come back to ListenUp.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp on %1$s</string>
+    <string name="gpodnetauth_finish_descr">Congratulations! Your gpodder.net account is now linked with your device. ListenUp will from now on automatically sync subscriptions on your device with your gpodder.net account.</string>
+    <string name="choose_data_directory_message">Please choose the base of your data folder. ListenUp will create the appropriate subdirectories.</string>
+    <string name="rating_volunteers_label">ListenUp is developed by volunteers in their free time. Share your appreciation of their work by leaving a nice rating.</string>
+    <string name="rating_rate">Rate ListenUp</string>
+    <string name="local_feed_description">This virtual podcast was created by adding a folder to ListenUp.</string>
+    <string name="antennapod_echo" translatable="false">ListenUp Echo</string>
+    <string name="antennapod_echo_year" translatable="false">ListenUp Echo %d</string>
+    <string name="echo_share">My year %d in podcasts. #ListenUpEcho</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Phone not compatible. Make sure you are running the most recent version of ListenUp from Google Play on your phone.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Could not reach the phone. Make sure your phone is nearby and ListenUp is installed.</string>
+</resources>

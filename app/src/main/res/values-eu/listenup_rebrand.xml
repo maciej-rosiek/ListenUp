@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Ongi etorri ListenUp-era!</string>
+    <string name="no_feed_url_podcast_found_by_search">Iradokitako podcastak ez zuen RSS estekarik, ListenUpek bat etor daitekeen podcast bat aurkitu du</string>
+    <string name="confirm_mobile_download_dialog_message">Datu mugikorreko konexioan podcastak eguneratzea desgaituta dago ezarpenetan. Saioa beranduago deskargatu dezake ListenUpek, wifia erabilgarri dagoenean.</string>
+    <string name="unknown_media_key">ListenUp - Multimedia tekla ezezaguna: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Ezabatu \"tokiko karpeta gehitu\" bidez gehitutako fitxategiak ere. Kontuan izan hauek ez dituela ListenUp-ek deskargatzen eta ezin direla berriro deskargatu</string>
+    <string name="pref_auto_local_delete_dialog_body">Kontuan izan, tokiko karpeten kasuan honek saioak ListenUp-etik kenduko dituela eta haien multimedia fitxategiak ezabatuko dituela gailuaren biltegiratzetik. Ezingo dira berriz deskargatu ListenUp bidez. Automatikoki ezabatzea gaitu nahi duzu?</string>
+    <string name="feed_refresh_sum">Zehaztu tarte bat ListenUp-ek saio berriak automatikoki bilatzeko</string>
+    <string name="pref_default_page_sum">ListenUp abiaraztean irekitzen den pantaila</string>
+    <string name="antennapod_version">ListenUp bertsioa</string>
+    <string name="contributors_summary">Denek lagun dezakete ListenUp hobetzen: kodearekin, itzulpenekin edo gure foroan erabiltzaileei laguntza emanez</string>
+    <string name="licenses_summary">ListenUp-ek beste software ezin hobeak erabiltzen ditu</string>
+    <string name="database_export_summary">Bidali beste gailu bateko ListenUp-era harpidetzak, entzundako saioak eta ilara</string>
+    <string name="database_import_summary">Ekarri ListenUpen datu-basea beste gailu batetik</string>
+    <string name="automatic_database_export_summary">Sortu ListenUp datu-basearen babeskopia bat 3 egunetik behin. Gorde soilik azken 5 babeskopiak.</string>
+    <string name="import_ok">Sakatu Ados ListenUp berrabiarazteko</string>
+    <string name="import_no_downgrade">Datu-base hau ListenUp-en bertsio berriago batekin esportatu zen. Uneko instalazioak ez daki fitxategi hori nola inportatu.</string>
+    <string name="gpodnet_description">Gpodder.net kode irekiko podcastak sinkronizatzeko zerbitzu bat da, zure zerbitzarian bertan instala dezakezuna. Gpodder.net ListenUp proiektutik independentea da.</string>
+    <string name="synchronization_summary_nextcloud">Gpodder Sync Nextcloud aplikazio kode irekikoa da, zure zerbitzarian erraz instala dezakezuna. Gpodder Sync ListenUp proiektutik independentea da.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Eman sarbidea irekitako web nabigatzailearen bidez eta itzuli ListenUpera.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp hemen: %1$s</string>
+    <string name="gpodnetauth_finish_descr">Zorionak! Zure gpodder.net kontua zure gailuarekin lotuta dago orain. Hemendik aurrera, ListenUpek automatikoki sinkronizatuko ditu zure gailuaren harpidetzak zure gpodder.net kontuarekin.</string>
+    <string name="rating_rate">Baloratu ListenUp</string>
+    <string name="local_feed_description">Podcast birtual hau ListenUp-i karpeta bat gehituta sortu da.</string>
+    <string name="choose_data_directory_message">Mesedez, aukeratu zure datu-karpetaren oinarria. ListenUp-ek azpidirektorio egokiak sortuko ditu.</string>
+    <string name="rating_volunteers_label">ListenUp boluntarioek garatzen dute beren denbora librean. Partekatu haien lanari buruzko iritzia balorazio polita utziz.</string>
+    <string name="echo_share">Nire %d urtea podcastetan. #ListenUpEcho</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Atala ezabatzean, azken hau ListenUp-etik eta multimedia fitxategia gailuaren biltegitik ezabatzen dira. Ezin da berriro deskargatu ListenUp bidez.</string>
+    <string name="report_bug_message">Sentitzen dugu zerbaitek huts egiten duela entzutea. Zure laguntza eskertuko genuke ListenUp hobetzeko. Mesedez, begiratu gure foroa edo GitHub-a arazoa jakinarazi den ikusteko. Hala ez bada, jakinarazi iezaguzu eta ikertuko dugu.</string>
+    <string name="bottom_navigation_deprecation_warning">Zoritxarrez, alboko nabigazioa kendu beharko dugu etorkizuneko eguneratze batean. ListenUp boluntario talde txiki batek garatu du, eta bi nabigazio estiloak urteetan mantendu ondoren, gehiegizko lan bihurtu da.\n\nAlboko nabigazioaren menpe bazaude, desgaitu ListenUp-en eguneraketak zure aplikazio dendan.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Telefonoa ez da bateragarria. Ziurtatu Google Play-ko ListenUp-en azken bertsioa erabiltzen ari zarela zure telefonoan.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Ezin izan da telefonora iritsi. Ziurtatu telefonoa gertu dagoela eta ListenUp instalatuta dagoela.</string>
+</resources>

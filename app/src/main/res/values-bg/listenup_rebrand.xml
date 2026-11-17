@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Добре дошли в ListenUp!</string>
+    <string name="local_feed_description">Този виртуален подкаст беше създаден чрез добавяне на папка към ListenUp,</string>
+</resources>

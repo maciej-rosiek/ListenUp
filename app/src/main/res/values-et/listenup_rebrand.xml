@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_welcome_title">Tere tulemast ListenUpi!</string>
+    <string name="no_feed_url_podcast_found_by_search">Soovitud taskuhääling ei paku RSS voogu, ListenUp leidis taskuhäälingu, mis võib sobida</string>
+    <string name="confirm_mobile_download_dialog_message">Mobiilse andmeside kaudu allalaadimine on seadetest keelatud. ListenUp saab saate hiljem Wi-Fi võrgus olles alla laadida.</string>
+    <string name="unknown_media_key">ListenUp - Tundmatu meedia võti: %1$d</string>
+    <string name="pref_auto_local_delete_sum">Lisaks kustuta failid, mis on lisatud „Lisa kohalikust kaustast“ meetodiga. Palun arvesta, et need pole ListenUpi poolt allalaaditud ja neid seega uuesti alla laadida ei saa</string>
+    <string name="pref_auto_local_delete_dialog_body">Kohalike kaustade puhul kustutamine eemaldab saate ListenUpist ja meedia faili seadme salvestusruumist. Seda ei saa uuesti ListenUpi kaudu alla laadida. Luba automaatne kustutamine?</string>
+    <string name="feed_refresh_sum">Määra kui tihti ListenUp otsib uusi saateid</string>
+    <string name="pref_default_page_sum">Ekraan, mis kuvatakse ListenUpi avamisel</string>
+    <string name="antennapod_version">ListenUpi versioon</string>
+    <string name="contributors_summary">Igaüks võib aidata teha ListenUpi paremaks - kirjutades koodi, tõlkides või aidates foorumis teisi kasutajaid</string>
+    <string name="licenses_summary">ListenUp kasutab teiste suurepärast tarkvara</string>
+    <string name="database_export_summary">Tõsta tellimused, kuulatud osad ja esitusjärjekord ListenUpi mõnes teises nutiseadmes</string>
+    <string name="database_import_summary">ListenUpi andmebaasi import teisest seadmest</string>
+    <string name="automatic_database_export_summary">Varunda ListenUpi andmebaas iga 3 päeva järel. Hoia 5 viimast varukoopiat.</string>
+    <string name="import_ok">Vajuta OK, et ListenUp taaskäivitada</string>
+    <string name="import_no_downgrade">See andmebaas on eksporditud ListenUpi uuemast versioonist. Sinu praegune äpp ei oska seda faili käsitseda.</string>
+    <string name="gpodnet_description">Gpodder.net on avatud lähtekoodiga taskuhäälingute sünkroniseerimise teenus, mida on võimalik ka ise majutada. Gpodder.net on sõltumatu ListenUp projektist.</string>
+    <string name="synchronization_summary_nextcloud">Gpoddersync on avatud lähtekoodiga Nextcloudi rakendus, mille võid oma serverile lihtsalt paigaldada. Rakendus on ListenUpist sõltumatu projekt.</string>
+    <string name="synchronization_nextcloud_authenticate_browser">Luba avatud brauserist juurdepääs ja tule tagasi ListenUpi.</string>
+    <string name="gpodnetauth_device_name_default">ListenUp %1$s seadmel</string>
+    <string name="gpodnetauth_finish_descr">Palju õnne! Sinu gpodder.net konto on nüüd lingitud sinu seadmega. ListenUp süngib nüüdsest tellimused sinu seadmes gpodder.net-i kontoga.</string>
+    <string name="rating_rate">Hinda ListenUpi</string>
+    <string name="local_feed_description">See virtuaalne taskuhääling loodi kausta lisamisega ListenUpi.</string>
+    <string name="echo_share">Minu aasta %d taskuhäälingutes. #ListenUpEcho</string>
+    <string name="rating_volunteers_label">ListenUpi arendavad vabatahtlikud oma vabast ajast. Näita, et hindad nende tööd ja anna hea hinne.</string>
+    <string name="choose_data_directory_message">Määra andmete salvestamiseks juurkataloog. ListenUp loob vajalikud alamkataloogid.</string>
+    <string name="visit_social_interact_confirm_dialog_title">Oled lahkumas ListenUpist</string>
+    <string name="delete_local_feed_confirmation_dialog_message">Kustutamine eemaldab saate ListenUpist ja kustutab meediafaili seadme salvestusruumist. Seda ei saa ListenUpi kaudu uuesti alla laadida.</string>
+    <string name="report_bug_message">Kahju kuulda, et mingi asi ei tööta. Sinu abi ListenUpi täiustamisel on väga oodatud. Palun kontrolli meie foorumist või GitHubist, ega sellest probleemist pole juba teatatud. Kui mitte, anna meile teada ja me uurime asja.</string>
+    <string name="bottom_navigation_deprecation_warning">Kahjuks peame tulevasest versioonist külgmenüü eemaldama. ListenUpi arendab väike vabatahtlike rühm ning kuna oleme aastaid mõlemat menüülahendust toetanud, on see muutunud liiga koormavaks.\n\nKui sa absoluutselt sõltud külgmenüüst, palun lülita oma rakendustepoes ListenUpi uuendamine välja.</string>
+    <string name="wearos_phone_not_supported" tools:ignore="UnusedResources">Telefon pole ühilduv. Palun kontrolli, et oled laadinud Google Play rakendustepoest alla viimase ListenUpi versiooni.</string>
+    <string name="wearos_phone_not_reachable" tools:ignore="UnusedResources">Telefon pole leitav. Palun kontrolli, et telefon on läheduses ja ListenUp on paigaldatud.</string>
+</resources>
