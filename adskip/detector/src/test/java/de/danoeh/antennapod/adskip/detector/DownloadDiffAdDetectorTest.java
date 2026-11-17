@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static de.danoeh.antennapod.adskip.detector.DownloadDiffAdDetector.CompareMode.ALWAYS;
+import static de.danoeh.antennapod.adskip.detector.DownloadDiffAdDetector.CompareMode.WHEN_UNEXPLAINED;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -19,7 +21,7 @@ public class DownloadDiffAdDetectorTest {
                 .frames("show", 0, 2000).frames("midroll-b", 0, 500).frames("show", 2000, 5000);
         SyntheticMp3 third = new SyntheticMp3()
                 .frames("show", 0, 2000).frames("midroll-c", 0, 300).frames("show", 2000, 5000);
-        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, true, 2, 2);
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, ALWAYS, 2, 2);
 
         // when
         DetectionResult result = detector.detect(episode(played, 0, second, third));
@@ -40,7 +42,7 @@ public class DownloadDiffAdDetectorTest {
                 .frames("show", 0, 2000).frames("campaign", 0, 800).frames("show", 2000, 4000);
         SyntheticMp3 otherAd = new SyntheticMp3()
                 .frames("show", 0, 2000).frames("other", 0, 600).frames("show", 2000, 4000);
-        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, true, 2, 2);
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, ALWAYS, 2, 2);
 
         // when
         DetectionResult result = detector.detect(episode(played, 0, sameAdSameSlot, otherAd));
@@ -59,7 +61,7 @@ public class DownloadDiffAdDetectorTest {
                 .frames("show", 0, 2000).frames("campaign", 0, 800).frames("show", 2000, 4000);
         SyntheticMp3 otherAd = new SyntheticMp3()
                 .frames("show", 0, 2000).frames("other", 0, 600).frames("show", 2000, 4000);
-        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, true, 2, 5);
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, ALWAYS, 2, 5);
 
         // when
         DetectionResult result = detector.detect(
@@ -76,7 +78,7 @@ public class DownloadDiffAdDetectorTest {
         // given
         SyntheticMp3 played = new SyntheticMp3().frames("show", 0, 3000);
         SyntheticMp3 copy = new SyntheticMp3().frames("show", 0, 3000);
-        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, true, 2, 2);
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(new InMemoryKnownAdLibrary(), false, ALWAYS, 2, 2);
 
         // when
         DetectionResult result = detector.detect(episode(played, 0, copy, copy));
@@ -90,7 +92,7 @@ public class DownloadDiffAdDetectorTest {
     public void learnsAdClipsAndFindsThemInTheNextEpisodeWithoutExtraDownloads() throws Exception {
         // given
         InMemoryKnownAdLibrary library = new InMemoryKnownAdLibrary();
-        new DownloadDiffAdDetector(library, true, true, 2, 2).detect(episode(
+        new DownloadDiffAdDetector(library, true, WHEN_UNEXPLAINED, 2, 2).detect(episode(
                 new SyntheticMp3().frames("campaign", 0, 600).frames("show-1", 0, 3000),
                 0,
                 new SyntheticMp3().frames("other", 0, 500).frames("show-1", 0, 3000),
@@ -99,7 +101,7 @@ public class DownloadDiffAdDetectorTest {
                 .frames("show-2", 0, 1500).frames("campaign", 0, 600).frames("show-2", 1500, 4000);
 
         // when
-        DetectionResult result = new DownloadDiffAdDetector(library, true, true, 2, 2)
+        DetectionResult result = new DownloadDiffAdDetector(library, true, WHEN_UNEXPLAINED, 2, 2)
                 .detect(episode(nextEpisode, SyntheticMp3.frameMs(4000), null, null));
 
         // then

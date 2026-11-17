@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.List;
 
+import static de.danoeh.antennapod.adskip.detector.DownloadDiffAdDetector.CompareMode.ALWAYS;
+
 public final class DetectorCli {
 
     private DetectorCli() {
@@ -15,7 +17,7 @@ public final class DetectorCli {
         List<String> copies = Arrays.asList(args).subList(2, args.length);
         long started = System.nanoTime();
         InMemoryKnownAdLibrary library = new InMemoryKnownAdLibrary();
-        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(library, false, true,
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(library, false, ALWAYS,
                 Math.min(2, copies.size()), copies.size());
         DetectionResult result = detector.detect(new EpisodeAudio(() -> new FileInputStream(played),
                         index -> new FileInputStream(copies.get(index)), declaredDurationMs));

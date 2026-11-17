@@ -6,20 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class DownloadDiffAdDetector implements AdDetector {
+    public enum CompareMode { NEVER, WHEN_UNEXPLAINED, ALWAYS }
+
     public static final long EXPLAINED_TOLERANCE_MS = 4000;
     private static final long MERGE_GAP_MS = 500;
 
     private final KnownAdLibrary library;
     private final boolean useKnownAds;
-    private final boolean compareDownloads;
+    private final CompareMode compareMode;
     private final int minExtraCopies;
     private final int maxExtraCopies;
 
-    public DownloadDiffAdDetector(KnownAdLibrary library, boolean useKnownAds, boolean compareDownloads,
+    public DownloadDiffAdDetector(KnownAdLibrary library, boolean useKnownAds, CompareMode compareMode,
                                   int minExtraCopies, int maxExtraCopies) {
         this.library = library;
         this.useKnownAds = useKnownAds;
-        this.compareDownloads = compareDownloads;
+        this.compareMode = compareMode;
         this.minExtraCopies = minExtraCopies;
         this.maxExtraCopies = maxExtraCopies;
     }
@@ -31,7 +33,7 @@ public final class DownloadDiffAdDetector implements AdDetector {
         List<AdSpan> knownSpans = useKnownAds ? findKnownAds(played, knownAds) : List.of();
         long unexplainedMs = unexplainedMs(played, knownSpans, episode.declaredDurationMs);
         boolean explained = unexplainedMs != DetectionResult.UNKNOWN && unexplainedMs <= EXPLAINED_TOLERANCE_MS;
-        if (!compareDownloads || (useKnownAds && explained)) {
+        if (compareMode == CompareMode.NEVER || (compareMode == CompareMode.WHEN_UNEXPLAINED && explained)) {
             return new DetectionResult(knownSpans, 0, unexplainedMs);
         }
 
