@@ -1084,6 +1084,7 @@
     <string name="ad_skip_undo">Undo</string>
     <string name="ad_playing_skipped_part">Playing the skipped part</string>
     <string name="ad_never_skip">Never skip</string>
+    <string name="ad_segment_range">%1$s – %2$s · %3$d s</string>
     <string name="ad_segment_kept">Not skipped</string>
     <string name="ad_segment_keep">Do not skip</string>
     <string name="ad_segment_skip">Skip</string>

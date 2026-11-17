@@ -17,6 +17,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import de.danoeh.antennapod.BuildConfig;
 import de.danoeh.antennapod.R;
 import de.danoeh.antennapod.activity.MainActivity;
+import de.danoeh.antennapod.adskip.AdSegmentsChangedEvent;
 import de.danoeh.antennapod.event.PlayerStatusEvent;
 import de.danoeh.antennapod.event.playback.PlaybackPositionEvent;
 import de.danoeh.antennapod.event.playback.PlaybackServiceEvent;
@@ -49,6 +50,8 @@ public class ExternalPlayerFragment extends Fragment {
     private PlayButton butPlay;
     private TextView feedName;
     private ProgressBar progressBar;
+    private SegmentOverlayView adSegmentOverlay;
+    private Disposable adSegmentsDisposable;
     private Disposable disposable;
     private Playable currentMedia;
 
@@ -65,6 +68,7 @@ public class ExternalPlayerFragment extends Fragment {
         butPlay = root.findViewById(R.id.butPlay);
         feedName = root.findViewById(R.id.txtvAuthor);
         progressBar = root.findViewById(R.id.episodeProgress);
+        adSegmentOverlay = root.findViewById(R.id.adSegmentOverlay);
 
         root.findViewById(R.id.fragmentLayout).setOnClickListener(v -> {
             Log.d(TAG, "layoutInfo was clicked");
@@ -115,6 +119,22 @@ public class ExternalPlayerFragment extends Fragment {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onAdSegmentsChanged(AdSegmentsChangedEvent event) {
+        if (currentMedia != null && PlaybackPreferences.getCurrentlyPlayingFeedMediaId() == event.mediaId) {
+            loadAdSegments(currentMedia);
+        }
+    }
+
+    private void loadAdSegments(Playable media) {
+        if (adSegmentsDisposable != null) {
+            adSegmentsDisposable.dispose();
+        }
+        adSegmentsDisposable = AdSegmentMarkers.load(getContext(),
+                PlaybackPreferences.getCurrentlyPlayingFeedMediaId(), media.getDuration(),
+                markers -> adSegmentOverlay.setSegments(markers.starts, markers.ends));
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onPositionObserverUpdate(PlaybackPositionEvent event) {
         if (event.getPosition() == Playable.INVALID_TIME || event.getDuration() == Playable.INVALID_TIME) {
             return;
@@ -135,6 +155,9 @@ public class ExternalPlayerFragment extends Fragment {
         Log.d(TAG, "Fragment is about to be destroyed");
         if (disposable != null) {
             disposable.dispose();
+        }
+        if (adSegmentsDisposable != null) {
+            adSegmentsDisposable.dispose();
         }
     }
 
@@ -162,6 +185,7 @@ public class ExternalPlayerFragment extends Fragment {
         txtvTitle.setText(media.getEpisodeTitle());
         feedName.setText(media.getFeedTitle());
         onPositionObserverUpdate(new PlaybackPositionEvent(media.getPosition(), media.getDuration()));
+        loadAdSegments(media);
         boolean isPlaying = PlaybackServiceInterface.isPlaying
                 && PlaybackPreferences.getCurrentPlayerStatus() == PlaybackPreferences.PLAYER_STATUS_PLAYING;
         butPlay.setIsShowPlay(!isPlaying);

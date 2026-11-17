@@ -10,6 +10,7 @@ import de.danoeh.antennapod.R;
 import de.danoeh.antennapod.ui.common.ThemeUtils;
 
 public class ChapterSeekBar extends androidx.appcompat.widget.AppCompatSeekBar {
+    public static final int AD_SEGMENT_COLOR = 0xCC00D400;
 
     private float top;
     private float width;
@@ -19,9 +20,12 @@ public class ChapterSeekBar extends androidx.appcompat.widget.AppCompatSeekBar {
     private float progressPrimary;
     private float progressSecondary;
     private float[] dividerPos;
+    private float[] segmentStarts;
+    private float[] segmentEnds;
     private boolean isHighlighted = false;
     private final Paint paintBackground = new Paint();
     private final Paint paintProgressPrimary = new Paint();
+    private final Paint paintSegment = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public ChapterSeekBar(Context context) {
         super(context);
@@ -46,6 +50,13 @@ public class ChapterSeekBar extends androidx.appcompat.widget.AppCompatSeekBar {
         paintBackground.setColor(ThemeUtils.getColorFromAttr(getContext(), R.attr.colorSurfaceVariant));
         paintBackground.setAlpha(128);
         paintProgressPrimary.setColor(ThemeUtils.getColorFromAttr(getContext(), R.attr.colorPrimary));
+        paintSegment.setColor(AD_SEGMENT_COLOR);
+    }
+
+    public void setSegments(final float[] starts, final float[] ends) {
+        this.segmentStarts = starts;
+        this.segmentEnds = ends;
+        invalidate();
     }
 
     /**
@@ -89,6 +100,7 @@ public class ChapterSeekBar extends androidx.appcompat.widget.AppCompatSeekBar {
         } else {
             drawProgressChapters(canvas);
         }
+        drawSegments(canvas);
         drawThumb(canvas);
     }
 
@@ -134,6 +146,25 @@ public class ChapterSeekBar extends androidx.appcompat.widget.AppCompatSeekBar {
                 canvas.drawRect(leftCurr, topExpanded, progressPrimary, bottomExpanded, paintProgressPrimary);
             } else {
                 canvas.drawRect(leftCurr, top, progressPrimary, bottom, paintProgressPrimary);
+            }
+        }
+        canvas.restoreToCount(saveCount);
+    }
+
+    private void drawSegments(Canvas canvas) {
+        if (segmentStarts == null || segmentEnds == null || segmentStarts.length == 0) {
+            return;
+        }
+        final int saveCount = canvas.save();
+        canvas.translate(getPaddingLeft(), getPaddingTop());
+        float segmentTop = center - density * 2.5f;
+        float segmentBottom = center + density * 2.5f;
+        int count = Math.min(segmentStarts.length, segmentEnds.length);
+        for (int i = 0; i < count; i++) {
+            float start = Math.max(0, segmentStarts[i]);
+            float end = Math.min(1, segmentEnds[i]);
+            if (end > start) {
+                canvas.drawRect(start * width, segmentTop, end * width, segmentBottom, paintSegment);
             }
         }
         canvas.restoreToCount(saveCount);

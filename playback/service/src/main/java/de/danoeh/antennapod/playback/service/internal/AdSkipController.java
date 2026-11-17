@@ -9,6 +9,7 @@ import android.util.Log;
 import androidx.media3.common.Player;
 import de.danoeh.antennapod.adskip.AdSegment;
 import de.danoeh.antennapod.adskip.AdSegmentsChangedEvent;
+import de.danoeh.antennapod.adskip.AdSkipSession;
 import de.danoeh.antennapod.adskip.AdSkipStore;
 import de.danoeh.antennapod.event.MessageEvent;
 import de.danoeh.antennapod.model.feed.FeedMedia;
@@ -22,9 +23,7 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class AdSkipController {
     private static final String TAG = "AdSkipController";
@@ -37,7 +36,6 @@ public class AdSkipController {
     private final Player player;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final Runnable checkRunnable = this::check;
-    private final Set<Long> allowedSegmentIds = new HashSet<>();
     private final SoundPool soundPool;
     private final int cueSoundId;
     private List<AdSegment> segments = new ArrayList<>();
@@ -67,7 +65,7 @@ public class AdSkipController {
         }
         mediaId = media.getId();
         segments = new ArrayList<>();
-        allowedSegmentIds.clear();
+        AdSkipSession.reset();
         lastSkipped = null;
         loadSegments();
     }
@@ -101,7 +99,7 @@ public class AdSkipController {
         }
         boolean withinRevertWindow = System.currentTimeMillis() - lastSkippedAt < REVERT_WINDOW_MS;
         if (withinRevertWindow && toMs < fromMs && lastSkipped.contains(toMs)) {
-            allowedSegmentIds.add(lastSkipped.id);
+            AdSkipSession.allow(lastSkipped.id);
         }
     }
 
@@ -127,7 +125,7 @@ public class AdSkipController {
     }
 
     private boolean isSkippable(AdSegment segment) {
-        return AdSegment.TYPE_AD.equals(segment.type) && !segment.kept && !allowedSegmentIds.contains(segment.id);
+        return AdSegment.TYPE_AD.equals(segment.type) && !segment.kept && !AdSkipSession.isAllowed(segment.id);
     }
 
     private void scheduleNextCheck(long positionMs) {
@@ -160,7 +158,7 @@ public class AdSkipController {
         if (segment.mediaId != mediaId) {
             return;
         }
-        allowedSegmentIds.add(segment.id);
+        AdSkipSession.allow(segment.id);
         seekingItself = true;
         player.seekTo(segment.startMs);
         seekingItself = false;

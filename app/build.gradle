@@ -57,6 +57,7 @@ android {
 }
 
 dependencies {
+    implementation project(':adskip:service')
     implementation project(":event")
     implementation project(':model')
     implementation project(':net:common')

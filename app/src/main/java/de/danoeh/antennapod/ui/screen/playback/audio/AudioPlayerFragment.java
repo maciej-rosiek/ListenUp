@@ -23,6 +23,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import de.danoeh.antennapod.adskip.AdSegmentsChangedEvent;
 
 import de.danoeh.antennapod.model.feed.Feed;
 import de.danoeh.antennapod.playback.service.PlaybackController;
@@ -104,6 +105,7 @@ public class AudioPlayerFragment extends Fragment implements
 
     private FeedMedia currentMedia;
     private Disposable disposable;
+    private Disposable adSegmentsDisposable;
     private boolean showTimeLeft;
     private boolean seekedToChapterStart = false;
     private int currentChapterIndex = -1;
@@ -331,6 +333,7 @@ public class AudioPlayerFragment extends Fragment implements
         updatePosition(new PlaybackPositionEvent(currentMedia.getPosition(), currentMedia.getDuration()));
         updatePlaybackSpeedButton(new SpeedChangedEvent(PlaybackSpeedUtils.getCurrentPlaybackSpeed(currentMedia)));
         setChapterDividers();
+        loadAdSegments();
         setupOptionsMenu();
         boolean isPlaying = PlaybackServiceInterface.isPlaying
                 && PlaybackPreferences.getCurrentPlayerStatus() == PlaybackPreferences.PLAYER_STATUS_PLAYING;
@@ -340,6 +343,21 @@ public class AudioPlayerFragment extends Fragment implements
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onPlayerStatusEvent(PlayerStatusEvent event) {
         loadMediaInfo(false);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onAdSegmentsChanged(AdSegmentsChangedEvent event) {
+        if (currentMedia != null && currentMedia.getId() == event.mediaId) {
+            loadAdSegments();
+        }
+    }
+
+    private void loadAdSegments() {
+        if (adSegmentsDisposable != null) {
+            adSegmentsDisposable.dispose();
+        }
+        adSegmentsDisposable = AdSegmentMarkers.load(getContext(), currentMedia.getId(), currentMedia.getDuration(),
+                markers -> sbPosition.setSegments(markers.starts, markers.ends));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -369,6 +387,9 @@ public class AudioPlayerFragment extends Fragment implements
         EventBus.getDefault().unregister(this);
         if (disposable != null) {
             disposable.dispose();
+        }
+        if (adSegmentsDisposable != null) {
+            adSegmentsDisposable.dispose();
         }
     }
 
@@ -534,6 +555,10 @@ public class AudioPlayerFragment extends Fragment implements
         final int itemId = item.getItemId();
         if (itemId == R.id.disable_sleeptimer_item || itemId == R.id.set_sleeptimer_item) {
             new SleepTimerDialog().show(getChildFragmentManager(), "SleepTimerDialog");
+            return true;
+        } else if (itemId == R.id.ad_segments_item) {
+            AdSegmentListDialog.newInstance(currentMedia.getId())
+                    .show(getChildFragmentManager(), AdSegmentListDialog.TAG);
             return true;
         } else if (itemId == R.id.transcript_item) {
             new TranscriptDialogFragment().show(
