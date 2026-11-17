@@ -31,7 +31,8 @@ ads matches the episode length in the feed, to within 4 seconds.
    show's MP3 frames are byte-identical in every download and only the ads differ. ListenUp downloads the episode
    again 2 to 5 times in parallel, on Wi-Fi only, hashing the stream instead of storing it. It aligns the frame
    sequences and marks frames of the played file that are not shared by every copy as ads. New ad clips go into
-   the known-ads library.
+   the known-ads library. When steps 1 and 2 find nothing, it compares two copies anyway, since some hosts
+   count the ads in the episode length of the feed.
 
 The detector is plain Java behind an interface, so further detectors (for example an on-device AI one) can be
 added next to it.

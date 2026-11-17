@@ -159,6 +159,26 @@ public class DownloadDiffAdDetectorTest {
     }
 
     @Test
+    public void comparesOnceWhenNothingIsMarkedAndTheFeedDurationIncludesTheAds() throws Exception {
+        // given
+        SyntheticMp3 played = new SyntheticMp3()
+                .frames("show", 0, 2000).frames("campaign", 0, 800).frames("show", 2000, 4000);
+        SyntheticMp3 otherAd = new SyntheticMp3()
+                .frames("show", 0, 2000).frames("other", 0, 600).frames("show", 2000, 4000);
+        DownloadDiffAdDetector detector = new DownloadDiffAdDetector(
+                new InMemoryKnownAdLibrary(), false, WHEN_UNEXPLAINED, 2, 5);
+
+        // when
+        DetectionResult result = detector.detect(
+                episode(played, SyntheticMp3.frameMs(4800), otherAd, otherAd, null, null, null));
+
+        // then
+        assertEquals(2, result.copiesCompared);
+        assertEquals(1, result.spans.size());
+        assertSpan(result.spans.get(0), 2000, 2800);
+    }
+
+    @Test
     public void learnsAdClipsAndFindsThemInTheNextEpisodeWithoutExtraDownloads() throws Exception {
         // given
         InMemoryKnownAdLibrary library = new InMemoryKnownAdLibrary();

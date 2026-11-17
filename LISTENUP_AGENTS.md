@@ -26,7 +26,8 @@ where they disagree.
   3. the feed-duration check: file length minus ads against `itunes:duration`;
   4. only when 3 leaves more than 4 s unexplained: 2, then up to 5, extra copies downloaded in parallel and
      aligned (`SequenceAligner`, patience-style); frames not shared by every copy are ads, and their clips are
-     learned into the library (`AdClipLearner`).
+     learned into the library (`AdClipLearner`). When 1 and 2 find nothing, 2 copies are compared even if 3
+     looks explained, because some hosts put the length with ads into `itunes:duration`.
   A second detector (on-device AI) is meant to be another `AdDetector` with its own per-podcast switch.
 - `adskip/service` is Android: `AdSkipStore` (own SQLite `adskip.db`: segments, analysis, known ads, per-feed
   settings, kept out of AntennaPod's database on purpose), `AdDetection` (entry points), `AdDetectionWorker`
