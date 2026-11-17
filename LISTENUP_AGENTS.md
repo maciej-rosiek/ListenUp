@@ -78,8 +78,9 @@ where they disagree.
 
 - `scripts/listenup-release.sh <major.minor.patch>` on raven: builds the signed `free` release, pushes, creates
   GitHub release `v<version>` with `ListenUp-<version>.apk`. Version code is `major*10000 + minor*100 + patch`.
-- Away from raven: run the "ListenUp release" workflow (or push a `v*` tag); it skips when the release already
-  has an APK.
+- Away from raven: `git tag v<version> && git push origin v<version>`; the "ListenUp release" workflow builds
+  and publishes in about 4 minutes (v0.3.0 was made this way). It skips when raven already uploaded an APK. Its
+  manual "Run workflow" button only appears once `listenup` is the default branch on GitHub.
 - Signing key: `~/.android/listenup-release/` on raven and the `LISTENUP_KEYSTORE_*` repository secrets. It
   stays outside the repository; every release must be signed with it or installed apps stop updating.
 
