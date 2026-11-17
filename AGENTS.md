@@ -1,3 +1,5 @@
+This is ListenUp, a fork of AntennaPod: read `LISTENUP_AGENTS.md` first, it overrides this file where they disagree.
+
 # Coding Style
 Never fix any warnings outside the code you wrote.
 Only update existing code if necessary to fulfill the user request.
