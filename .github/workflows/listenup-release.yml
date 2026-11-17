@@ -1,0 +1,71 @@
+name: ListenUp release
+
+on:
+  push:
+    tags: [ "v*" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release, for example 0.2.0"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      VERSION: ${{ github.event.inputs.version || github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Skip when the release already has an APK
+        id: existing
+        run: |
+          VERSION="${VERSION#v}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          for attempt in 1 2 3 4 5; do
+            if ! gh release view "v$VERSION" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+              break
+            fi
+            if gh release view "v$VERSION" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' \
+                | grep -q '\.apk$'; then
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              break
+            fi
+            sleep 30
+          done
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        if: steps.existing.outputs.skip != 'true'
+      - name: Set up JDK 21
+        if: steps.existing.outputs.skip != 'true'
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Build signed APK
+        if: steps.existing.outputs.skip != 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.LISTENUP_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.LISTENUP_KEYSTORE_PASSWORD }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/listenup.jks"
+          ./gradlew :app:assembleFreeRelease \
+              -PreleaseStoreFile="$RUNNER_TEMP/listenup.jks" \
+              -PreleaseStorePassword="$KEYSTORE_PASSWORD" \
+              -PreleaseKeyAlias=listenup \
+              -PreleaseKeyPassword="$KEYSTORE_PASSWORD" \
+              -PlistenupVersionName="${{ steps.existing.outputs.version }}"
+          cp app/build/outputs/apk/free/release/app-free-release.apk \
+              "ListenUp-${{ steps.existing.outputs.version }}.apk"
+      - name: Publish release
+        if: steps.existing.outputs.skip != 'true'
+        run: |
+          TAG="v${{ steps.existing.outputs.version }}"
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh release upload "$TAG" "ListenUp-${{ steps.existing.outputs.version }}.apk"
+          else
+            gh release create "$TAG" "ListenUp-${{ steps.existing.outputs.version }}.apk" \
+                --title "ListenUp ${{ steps.existing.outputs.version }}" --generate-notes --target "$GITHUB_SHA"
+          fi
