@@ -71,9 +71,11 @@ public class FeedSettingsPreferenceFragment extends PreferenceFragmentCompat {
     private static final String PREF_TAGS = "tags";
     private static final String PREF_EDIT_FEED_URL = "editFeedUrl";
     private static final String PREF_RECONNECT_LOCAL_FOLDER = "reconnectLocalFolder";
+    private static final String PREF_AD_DETECTION = "adDetection";
 
     private Feed feed;
     private Disposable disposable;
+    private Disposable adDetectionDisposable;
     private FeedPreferences feedPreferences;
 
     public static FeedSettingsPreferenceFragment newInstance(long feedId) {
@@ -160,9 +162,13 @@ public class FeedSettingsPreferenceFragment extends PreferenceFragmentCompat {
         if (disposable != null) {
             disposable.dispose();
         }
+        if (adDetectionDisposable != null) {
+            adDetectionDisposable.dispose();
+        }
     }
 
     private void setupPreferences() {
+        adDetectionDisposable = AdDetectionPreference.setup(findPreference(PREF_AD_DETECTION), feed.getId());
         findPreference(PREF_AUTO_SKIP).setOnPreferenceClickListener(preference -> {
             new FeedPreferenceSkipDialog(getContext(),
                     feedPreferences.getFeedSkipIntro(), feedPreferences.getFeedSkipEnding()) {
