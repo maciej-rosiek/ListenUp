@@ -50,6 +50,9 @@ where they disagree.
 - Ads are stitched in per request at MP3 frame boundaries without re-encoding, so show frames are byte-identical
   across downloads. The number of ads changes per request (2 to 12 clips seen for one episode).
 - The same User-Agent re-requested soon gets a byte-identical file; every extra copy needs its own User-Agent.
+  A User-Agent already used from raven's IP (the debug app's `AntennaPod/<version>`) can keep getting a file with
+  every ad slot empty (1-byte ranges in the header), so a test on raven may find 0 ads. To test skipping anyway,
+  insert a row into `segments` (`type` `ad`, `source` `host_marked`).
 - Each clip starts with an ffmpeg tag frame whose `Info` magic is overwritten with `55555555`; it holds the
   clip's frame count. The final audio response carries `x-megaphone-payload-2` with every slot's byte range.
 - `itunes:duration` is the length without ads; a correct detection leaves under 4 s unexplained.
@@ -71,6 +74,12 @@ where they disagree.
   feed://anchor.fm/s/d2713e0/podcast/rss com.listenup.debug`, subscribe, podcast settings (gear) → Ad detection
   → tick both, download an episode, wait for `AdDetectionWorker: Found N ads` in logcat. Inspect results with
   `adb exec-out run-as com.listenup.debug cat databases/adskip.db > adskip.db` and sqlite.
+- Car: AVD `listenup_car` (Android Automotive 14, no Google login) runs the same media session as Android Auto.
+  Start it with `LISTENUP_AVD=listenup_car scripts/listenup-emulator.sh`. Apps run as user 10, so use
+  `run-as com.listenup.debug --user 10`, and take screenshots with `adb exec-out screencap -p -d <id>`; the
+  first id from `dumpsys SurfaceFlinger --display-id` is the main screen. To open ListenUp in the car media
+  app: `adb shell am start --user 10 -a android.car.intent.action.MEDIA_TEMPLATE --es
+  android.car.intent.extra.MEDIA_COMPONENT com.listenup.debug/de.danoeh.antennapod.playback.service.Media3PlaybackService`.
 - Your phone gets release builds only (Obtainium or `adb install` of the release APK); the debug app stays on
   the emulator.
 
